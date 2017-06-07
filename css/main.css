@@ -1,0 +1,345 @@
+/* ------------------------------------------------
+ * Global
+ * ---------------------------------------------- */
+html {
+  font-family: "Fira Sans", sans-serif;
+    font-weight:300;
+
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 58em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+pre {
+  tab-size:4;
+}
+
+/* ------------------------------------------------
+ * Sidebar 
+ * ---------------------------------------------- */
+.sidebar {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: rgba(255,255,255,.5);
+    background-color: #300030;
+}
+@media (min-width: 48em) {
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 18rem;
+        text-align: left;
+    }
+}
+
+/* Sidebar links */
+.sidebar a {
+    color: #fff;
+}
+
+/* About section */
+.sidebar-about {
+    margin-top: 50px
+}
+
+.sidebar-about h1 {
+    color: #fff;
+    margin-top: 0;
+    font-weight:300;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-left: 0;
+    list-style: none;
+}
+
+.subnav {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar-nav-item {
+    display: block;
+}
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+    text-decoration: underline;
+}
+.sidebar-nav-item.active {
+    font-weight: bold;
+}
+
+/* ------------------------------------------------
+ * Sticky Sidebar 
+ * ---------------------------------------------- */
+@media (min-width: 48em) {
+    .sidebar-sticky {
+        position: absolute;
+        right:  1rem;
+        top: 1rem;
+        left:   1rem;
+    }
+}
+
+
+/* ------------------------------------------------
+ * Container
+ * ---------------------------------------------- */
+.content {
+    padding-top:    2rem;
+    padding-bottom: 2rem;
+    line-height: 2rem;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    border-left-color: #300030;
+    padding-left: 1rem;
+}
+.content h1 {
+    border-left-style: solid;
+    border-left-width: 8px;
+}
+
+.content h2 {
+    border-left-style: solid;
+    border-left-width: 4px;
+}
+
+.content h3 {
+    border-left-style: dotted;
+    border-left-width: 2px;
+}
+
+span.tag {
+    margin-right: 5px;
+    padding: 0.1rem 0.5rem;
+    background-color: #300030;
+    border-radius: 5px;
+    font-size: 80%;
+}
+span.tag a {
+    color: #fff !important;
+}
+
+@media (min-width: 48em) {
+    .content {
+        max-width: 38rem;
+        margin-left: 20rem;
+        margin-right: 2rem;
+    }
+}
+
+@media (min-width: 64em) {
+    .content {
+        max-width: 44rem;
+        margin-left: 20rem;
+        margin-right: 2rem;
+    }
+}
+
+.footnote {
+    font-size: 0.7em;
+    margin-top: 0.5rem;
+}
+
+.go {
+    color: #444444;
+}
+
+.badge {
+    display:inline;
+    vertical-align: bottom;
+}
+
+.badges {
+    float: right;
+}
+
+/* ------------------------------------------------
+ * Reverse Layout
+ * ---------------------------------------------- */
+@media (min-width: 48em) {
+    .layout-reverse .sidebar {
+        left: auto;
+        right: 0;
+    }
+    .layout-reverse .content {
+        margin-left: 2rem;
+        margin-right: 20rem;
+    }
+}
+
+@media (min-width: 64em) {
+    .layout-reverse .content {
+        margin-left: 4rem;
+        margin-right: 22rem;
+    }
+}
+
+/* ------------------------------------------------
+ * Theme: Red
+ * ---------------------------------------------- */
+.theme-red .sidebar {
+    background-color: #ac4142;
+}
+body.theme-red .content h1,
+body.theme-red .content h2,
+body.theme-red .content h3 {
+    border-left-color: #ac4142;
+}
+body.theme-red span.tag {
+    background-color: #ac4142;
+}
+body.theme-red .content a,
+body.theme-red .related-posts li a:hover {
+    color: #ac4142;
+}
+
+/* ------------------------------------------------
+ * Theme: Orange
+ * ---------------------------------------------- */
+body.theme-orange .sidebar {
+    background-color: #d28445;
+}
+body.theme-orange .content h1,
+body.theme-orange .content h2,
+body.theme-orange .content h3 {
+    border-left-color: #d28445;
+}
+body.theme-orange span.tag {
+    background-color: #d28445;
+}
+body.theme-orange .content a,
+body.theme-orange .related-posts li a:hover {
+    color: #d28445;
+}
+
+/* ------------------------------------------------
+ * Theme: Yellow
+ * ---------------------------------------------- */
+body.theme-yellow .sidebar {
+    background-color: #f4bf75;
+}
+body.theme-yellow .content h1,
+body.theme-yellow .content h2,
+body.theme-yellow .content h3 {
+    border-left-color: #f4bf75;
+}
+body.theme-yellow span.tag {
+    background-color: #f4bf75;
+}
+body.theme-yellow .content a,
+body.theme-yellow .related-posts li a:hover {
+    color: #f4bf75;
+}
+
+/* ------------------------------------------------
+ * Theme: Green
+ * ---------------------------------------------- */
+body.theme-green .sidebar {
+    background-color: #90a959;
+}
+body.theme-green .content h1,
+body.theme-green .content h2,
+body.theme-green .content h3 {
+    border-left-color: #90a959;
+}
+body.theme-green span.tag {
+    background-color: #90a959;
+}
+body.theme-green .content a,
+body.theme-green .related-posts li a:hover {
+    color: #90a959;
+}
+
+/* ------------------------------------------------
+ * Theme: Cyan
+ * ---------------------------------------------- */
+body.theme-cyan .sidebar {
+    background-color: #75b5aa;
+}
+body.theme-cyan .content h1,
+body.theme-cyan .content h2,
+body.theme-cyan .content h3 {
+    border-left-color: #75b5aa;
+}
+body.theme-cyan span.tag {
+    background-color: #75b5aa;
+}
+body.theme-cyan .content a,
+body.theme-cyan .related-posts li a:hover {
+    color: #75b5aa;
+}
+
+/* ------------------------------------------------
+ * Theme: Blue
+ * ---------------------------------------------- */
+body.theme-blue .sidebar {
+    background-color: #6a9fb5;
+}
+body.theme-blue .content h1,
+body.theme-blue .content h2,
+body.theme-blue .content h3 {
+    border-left-color: #6a9fb5;
+}
+body.theme-blue span.tag {
+    background-color: #6a9fb5;
+}
+body.theme-blue .content a,
+body.theme-blue .related-posts li a:hover {
+    color: #6a9fb5;
+}
+
+/* ------------------------------------------------
+ * Theme: Magenta
+ * ---------------------------------------------- */
+body.theme-magenta .sidebar {
+    background-color: #aa759f;
+}
+body.theme-magenta .content h1,
+body.theme-magenta .content h2,
+body.theme-magenta .content h3 {
+    border-left-color: #aa759f;
+}
+body.theme-magenta span.tag {
+    background-color: #aa759f;
+}
+body.theme-magenta .content a,
+body.theme-magenta .related-posts li a:hover {
+    color: #aa759f;
+}
+
+/* ------------------------------------------------
+ * Theme: Brown
+ * ---------------------------------------------- */
+body.theme-brown .sidebar {
+    background-color: #8f5536;
+}
+body.theme-brown .content h1,
+body.theme-brown .content h2,
+body.theme-brown .content h3 {
+    border-left-color: #8f5536;
+}
+body.theme-brown span.tag {
+    background-color: #8f5536;
+}
+body.theme-brown .content a,
+body.theme-brown .related-posts li a:hover {
+    color: #8f5536;
+}

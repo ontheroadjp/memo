@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+        
+    <head>
+        <link href="https://gmpg.org/xfn/11" rel="profile">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        
+
+        <title>Git で バックアップ  &middot; MEMO </title>
+
+        
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/poole.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/syntax.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+        
+        <link rel="manifest" href="https://ontheroadjp.github.io/memo//manifest.json">
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/mobile/apple-touch-icon.png">
+
+        
+        <meta name="theme-color" content="#ffffff">
+
+        
+        <link rel="mask-icon" href="/images/mobile/pinned-icon-150x150.svg" color="#5bbad5">
+
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+        
+        <link href="" rel="alternate" type="application/rss+xml" title="MEMO" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+        <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Fira Sans']
+                }
+            });
+        </script>
+    </head>
+    <body class="theme-blue">
+
+<div class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about" align=center>
+
+            <a href="https://ontheroadjp.github.io/memo/">
+                
+                    <img src="/memo/images/logo-512x512-white.png" width=50% />
+                
+            </a>
+
+            <p class="lead">
+                 
+                    Memos of the WEB Development 
+                
+            </p>
+
+        </div>
+
+        <ul class="sidebar-nav">
+            <li><a href="https://ontheroadjp.github.io/memo//dev">Posts</a></li>
+            
+                <li><a href="/memo/about/">About </a></li>
+            
+            <br/> 
+            <li>Code:</li>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+            
+        </ul>
+
+        <a href="https://twitter.com/natethefinch"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+        
+        
+        <a href="https://github.com/ontheroadjp"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+        <a href="https://plus.google.com/&#43;NateFinch"><i class="fa fa-google-plus"></i></a> 
+
+        <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/> &copy; 2017 Nate Finch. All rights reserved.</p>
+
+    </div>
+</div>
+
+
+    <div class="content container">
+        <div class="post">
+            <h1 class="post-title">
+
+                Git で バックアップ
+            </h1>
+            <nav class="post-meta" style="margin-bottom: 20px">
+                <span class="post-date">
+                    May 21, 2017
+                </span> | 
+
+                
+
+                
+                    
+                        <span class="tag">
+                            <a href="/memo/tags/git">
+                                # Git
+                            </a>
+                        </span>
+                    
+                
+            </nav>
+
+            
+
+            
+
+<h2 id="やりたいこと">やりたいこと</h2>
+
+<ul>
+<li>今まで作業ディレクトリを bk_yyyy_mm_dd_ディレクトリ名.zip みたいにコピー&amp;圧縮してバックアップを取っていたものを git を使ってやってみたい。</li>
+<li>中途半端な状態であろうがなんだろうがとにかく保存（バックアップ）したい。</li>
+</ul>
+
+<h2 id="運用方法">運用方法</h2>
+
+<ul>
+<li>バックアップ用のブランチをつくる。</li>
+<li>普段はバックアップ用のブランチで作業。</li>
+<li>バックアップする時は中途半端だろうがなんだろうが add -A して commit。</li>
+<li>いちいち add -A して commit は面倒くさいので シェルスクリプトで。</li>
+<li>コミット時のメモに日時を付け加えて、いつ時点のバックアップかをわかるように。</li>
+<li>clone で定期実行してもいいけど今はしていない。</li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://qiita.com/irxground/items/80dc6432e7d9d2b8b2a9">gitで定期的にファイルをバックアップする</a></li>
+</ul>
+
+<h2 id="手順">手順</h2>
+
+<ol>
+<li><p>バックアップ用のブランチを作成してバックアップブランチへ移動する</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git checkout -b bk
+</pre></div></li>
+
+<li><p>シェルスクリプトを作成して適当な名前で保存（<code>backup.sh</code> など）</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic">#!/bin/bash</span>
+<span style="color: #24909d">set</span> -e
+<span style="color: #40ffff">content_dir</span><span style="color: #d0d0d0">=</span><span style="color: #ed9d13">&quot;バックアップ対象のディレクトリ&quot;</span>
+
+<span style="color: #24909d">set</span> -x
+<span style="color: #24909d">cd</span> <span style="color: #ed9d13">&quot;</span><span style="color: #40ffff">$content_dir</span><span style="color: #ed9d13">&quot;</span>
+git add -A
+git commit -m <span style="color: #ed9d13">&quot;backup at </span><span style="color: #6ab825; font-weight: bold">$(</span>date <span style="color: #ed9d13">&quot;+%Y-%m-%d %T&quot;</span><span style="color: #6ab825; font-weight: bold">)</span><span style="color: #ed9d13">&quot;</span> <span style="color: #d0d0d0">||</span> <span style="color: #24909d">true</span>
+git push -f origin bk
+</pre></div></li>
+</ol>
+
+<ul>
+<li><p>バックアップ対象のディレクトリはフルパスで指定<br />
+例：</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #40ffff">content_dir</span><span style="color: #d0d0d0">=</span><span style="color: #ed9d13">&quot;</span><span style="color: #40ffff">$HOME</span><span style="color: #ed9d13">/Vagrant/LAMP/www/hogehoge&quot;</span>
+</pre></div></li>
+
+<li><p>バックアップ対象のディレクトリは当たり前だけど git 管理していることが前提</p></li>
+</ul>
+
+<h2 id="バックアップの実行">バックアップの実行</h2>
+
+<ol>
+<li><p>シェルを実行するだけ。実行すればありのままをコミットしてくれる</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>sh backup.sh
+</pre></div></li>
+</ol>
+
+
+             
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname == "localhost") 
+            return;
+    
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+    
+        var disqus_shortname = 'hogecom';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the comments powered by 
+    <a href="http://disqus.com/?ref_noscript">Disqus.</a>
+</noscript>
+
+        </div>
+    </div> 
+
+</body>
+</html>
+

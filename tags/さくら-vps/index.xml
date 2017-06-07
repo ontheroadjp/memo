@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MEMO</title>
+        <generator uri="https://hugo.spf13.com">Hugo</generator>
+        <link>https://ontheroadjp.github.io/memo/tags/%E3%81%95%E3%81%8F%E3%82%89-vps/</link>
+        <language>ja-JP</language>
+        <author>ontheroad_jp</author>
+        <copyright>2017 ontheroad.jp</copyright>
+            <updated>Wed, 19 Apr 2017 19:01:00 UTC</updated>
+            
+                
+                <item>
+                    <title>さくら VPS 初期設定</title>
+                    <link>https://ontheroadjp.github.io/memo/dev/sakura_vps/initial-settings-of-the-sakura-vps/</link>
+                    <pubDate>Wed, 19 Apr 2017 19:01:00 UTC</pubDate>
+                    <author>ontheroad_jp</author>
+                    <guid>https://ontheroadjp.github.io/memo/dev/sakura_vps/initial-settings-of-the-sakura-vps/</guid>
+                    <description>
+
+&lt;h1 id=&#34;さくら-vps-の基本設定&#34;&gt;さくら VPS の基本設定&lt;/h1&gt;
+
+&lt;h2 id=&#34;ホスト名の設定&#34;&gt;ホスト名の設定&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ vim /etc/sysconfig/network
+
+&lt;span style=&#34;color: #999999; font-style: italic&#34;&gt;#HOSTNAME=localhost.localdomain&lt;/span&gt;
+&lt;span style=&#34;color: #40ffff&#34;&gt;HOSTNAME&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;=&lt;/span&gt;NOBITA.localdomain
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;vnc-コンソールのキー配列の設定&#34;&gt;VNC コンソールのキー配列の設定&lt;/h2&gt;
+
+&lt;p&gt;MacBookPro US 配列からさくらVPS の CentOS6.7（標準OS）へ、さくらのVNC コンソール経由で接続すると、キー入力が正しく行えないので、キーボード設定を正しく設定する必要がある。&lt;/p&gt;
+
+&lt;p&gt;キーボード設定は &lt;code&gt;さくらVPS の設定&lt;/code&gt; と &lt;code&gt;CentOS の設定&lt;/code&gt; を行う必要あり。&lt;/p&gt;
+
+&lt;h3 id=&#34;1-さくらvps-の設定&#34;&gt;1. さくらVPS の設定&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://secure.sakura.ad.jp/vps/#/login&#34;&gt;VPSコントロールパネル&lt;/a&gt;にログイン後、画面右上の &lt;code&gt;設定&lt;/code&gt; メニューから &lt;code&gt;サーバー情報編集&lt;/code&gt; を選択して &lt;code&gt;VNC コンソールキー配列&lt;/code&gt; から &lt;code&gt;en-us&lt;/code&gt; を選択する。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;CentOS を再起動すると変更が有効になる。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参考：&lt;a href=&#34;https://help.sakura.ad.jp/app/answers/detail/a_id/2406/related/1&#34;&gt;さくらのサポート情報:キー配列の変更方法&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;2-centos-の設定&#34;&gt;2. CentOS の設定&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ loadkeys us&lt;/code&gt; コマンドで US 配列になる（ちゃんと入力できるようになる）けど、CentOS を再起動するたびに設定をしなければならない。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;なので、とりあえず &lt;code&gt;$ loadkeys us&lt;/code&gt; でちゃんと入力できるようにしてから、 &lt;code&gt;/etc/sysconfig/keyboard&lt;/code&gt; の中を、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;KEYTABLE=&amp;quot;us&amp;quot;
+MODEL=&amp;quot;pc105+inet&amp;quot;
+LAYOUT=&amp;quot;us&amp;quot;
+KEYBOARDTYPE=&amp;quot;pc&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;に変更する。&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$ loadkeys us&lt;/code&gt; する前に、&lt;code&gt;vi&lt;/code&gt; を起動すると &lt;code&gt;:&lt;/code&gt; が入力できなくて、強制再起動する羽目になる。&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;ssh-接続の設定&#34;&gt;SSH 接続の設定&lt;/h2&gt;
+
+&lt;h3 id=&#34;1-秘密鍵と公開鍵ペアの生成&#34;&gt;1. 秘密鍵と公開鍵ペアの生成&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key &lt;span style=&#34;color: #d0d0d0&#34;&gt;(&lt;/span&gt;/Users/username/.ssh/id_rsa&lt;span style=&#34;color: #d0d0d0&#34;&gt;)&lt;/span&gt;:  ← 作成される場所。問題なければEnter。
+Enter passphrase &lt;span style=&#34;color: #d0d0d0&#34;&gt;(&lt;/span&gt;empty &lt;span style=&#34;color: #6ab825; font-weight: bold&#34;&gt;for&lt;/span&gt; no passphrase&lt;span style=&#34;color: #d0d0d0&#34;&gt;)&lt;/span&gt;:  ← パスフレーズの入力。省略する場合はそのままEnter。
+Enter same passphrase again:  ← パスフレーズの再入力。省略した場合はそのままEnter。
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;上記実行すると、&lt;code&gt;~/.ssh/&lt;/code&gt; に秘密鍵（&lt;code&gt;id_rsa&lt;/code&gt;）と公開鍵（&lt;code&gt;id_rsa.pub&lt;/code&gt;）が生成される。&lt;/p&gt;
+
+&lt;h3 id=&#34;2-さくらvps-へ公開鍵を配置&#34;&gt;2. さくらVPS へ公開鍵を配置&lt;/h3&gt;
+
+&lt;p&gt;SSH 接続したいユーザーのホームディレクトリに &lt;code&gt;.ssh/&lt;/code&gt; を作成し、&lt;code&gt;authorized_keys&lt;/code&gt; という名前で保存する。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;~/.ssh/authorized_keys&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;3-ssh-接続元の設定&#34;&gt;3. SSH 接続元の設定&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;~/.ssh/config&lt;/code&gt; に以下の内容を記入して保存すると &lt;code&gt;$ ssh &amp;lt;ホスト名&amp;gt;&lt;/code&gt; で接続できる。&lt;/p&gt;
+
+&lt;p&gt;設定例&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$cat ~/.ssh/config
+
+Host sakuraroot
+	HostName xxx.xxx.xxx.xxx
+	Port 22
+	User root
+ 
+Host sakura
+	HostName xxx.xxx.xxx.xxx
+	Port 10022
+	User nobita
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;SSH 接続&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ssh sakura
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;コンソール VPS でログイン&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ユーザー名： root&lt;/li&gt;
+&lt;li&gt;パスワード： インストール時に設定したパスワード&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;root で SSH 接続設定&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;~/.ssh/config&lt;/code&gt; を作成する&lt;/li&gt;
+&lt;li&gt;接続時に root パスワード聞かれる（パスワード認証）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #40ffff&#34;&gt;$vim&lt;/span&gt; ~/.ssh/config
+    
+Host sakuraroot
+    HostName xxx.xxx.xxx.xxx
+    Port &lt;span style=&#34;color: #3677a9&#34;&gt;22&lt;/span&gt;
+    User root
+&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;code&gt;$ ssh sakuraroot&lt;/code&gt; で SSH 接続確認&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Chef solo のインストール&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;接続時に root パスワード聞かれる（パスワード認証）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ knife solo prepare sakuraroot
+&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Chef solo の実行&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;接続時に root パスワード聞かれる（パスワード認証）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ knife solo cook sakuraroot
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Chef solo 実行後は &lt;code&gt;$ ssh sakuraroot&lt;/code&gt; では SSH 接続ができなくなる（SSH ポートが 22番から 10022番へ変更となるため）&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;一般ユーザーで SSH 接続&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;~/.ssh/config&lt;/code&gt; に以下を追記&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #40ffff&#34;&gt;$vim&lt;/span&gt; ~/.ssh/config
+    
+Host sakura
+    HostName xxx.xxx.xxx.xxx
+    Port &lt;span style=&#34;color: #3677a9&#34;&gt;10022&lt;/span&gt;
+    User nobita
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;接続できたら &lt;code&gt;$ su -&lt;/code&gt; で root 権限が得られるか確認&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo&lt;/code&gt; も確認。例）&lt;code&gt;$ sudo iptables -L&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+                </item>
+            
+        
+    </channel>
+</rss>

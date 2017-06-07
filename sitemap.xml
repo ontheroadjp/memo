@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/about/</loc>
+    <lastmod>2017-06-06T11:14:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/git-checkout-command/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/git-log-settings/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/error-403-in-git-push/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/git-stash-command/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/make-backups-by-git/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/git-commands/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/manipulate-git-branchs/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/branch-name-in-bash-prompt/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/create-new-git-repository/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/manage-dotfiles-by-git/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/git/chnge-previos-commit-message/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/sakura_vps/initial-settings-of-the-sakura-vps/</loc>
+    <lastmod>2017-04-19T19:01:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/tags/bash/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/dev/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/tags/git/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/categories/git/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/tags/github/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/</loc>
+    <lastmod>2017-06-06T11:14:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/tags/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/categories/tools/</loc>
+    <lastmod>2017-05-21T06:29:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ontheroadjp.github.io/memo/tags/%E3%81%95%E3%81%8F%E3%82%89-vps/</loc>
+    <lastmod>2017-04-19T19:01:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

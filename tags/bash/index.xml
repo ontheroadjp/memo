@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MEMO</title>
+        <generator uri="https://hugo.spf13.com">Hugo</generator>
+        <link>https://ontheroadjp.github.io/memo/tags/bash/</link>
+        <language>ja-JP</language>
+        <author>ontheroad_jp</author>
+        <copyright>2017 ontheroad.jp</copyright>
+            <updated>Sun, 21 May 2017 06:29:00 UTC</updated>
+            
+                
+                <item>
+                    <title>Git ブランチ名を Bash プロンプトに表示する</title>
+                    <link>https://ontheroadjp.github.io/memo/dev/git/branch-name-in-bash-prompt/</link>
+                    <pubDate>Sun, 21 May 2017 06:29:00 UTC</pubDate>
+                    <author>ontheroad_jp</author>
+                    <guid>https://ontheroadjp.github.io/memo/dev/git/branch-name-in-bash-prompt/</guid>
+                    <description>
+
+&lt;h2 id=&#34;test&#34;&gt;test&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #6ab825; font-weight: bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;fancyAlert(arg)&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color: #6ab825; font-weight: bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;(arg)&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color: #d0d0d0&#34;&gt;$.facebox({div:&lt;/span&gt;&lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;#foo&amp;#39;&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;})&lt;/span&gt;
+  &lt;span style=&#34;color: #d0d0d0&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color: #d0d0d0&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;やりたいこと&#34;&gt;やりたいこと&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;シェル（bash）のプロンプトに git のブランチ名を表示する&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;環境&#34;&gt;環境&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Mac OSX Yosemite&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;設定手順&#34;&gt;設定手順&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;git-prompt.sh&lt;/code&gt; と &lt;code&gt;git-completion.bash&lt;/code&gt; の取得 &amp;amp; 設置&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;~/.bashrc&lt;/code&gt; の編集&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;1-git-prompt-sh-の取得-設置&#34;&gt;(1) git-prompt.sh の取得 &amp;amp; 設置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir tmp
+&lt;span style=&#34;color: #24909d&#34;&gt;cd&lt;/span&gt; tmp
+git clone https://github.com/git/git.git
+cp git/contrib/completion/git-prompt.sh /usr/local/etc/bash_completion.d/
+cp git/contrib/completion/git-completion.bash /usr/local/etc/bash_completion.d/
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;2-bashrc-の編集&#34;&gt;(2) .bashrc の編集&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.bashrc&lt;/code&gt; に以下を追加する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #24909d&#34;&gt;source&lt;/span&gt; /usr/local/etc/bash_completion.d/git-prompt.sh
+&lt;span style=&#34;color: #24909d&#34;&gt;source&lt;/span&gt; /usr/local/etc/bash_completion.d/git-completion.bash
+&lt;span style=&#34;color: #40ffff&#34;&gt;GIT_PS1_SHOWDIRTYSTATE&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #24909d&#34;&gt;true&lt;/span&gt;
+&lt;span style=&#34;color: #24909d&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color: #40ffff&#34;&gt;PS1&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;[\[\033[32m\]@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]]\&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;export PS1=&lt;/code&gt; の設定はお好みで&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$(__git_ps1)&lt;/code&gt; が git のブランチ名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;.bashrc&lt;/code&gt; の編集が終わったら &lt;code&gt;source .bashrc&lt;/code&gt; を忘れずに&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;表示イメージ&#34;&gt;表示イメージ&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;[&lt;/span&gt;@PCName: ~/Vagrant/LAMP/Peach &lt;span style=&#34;color: #d0d0d0&#34;&gt;(&lt;/span&gt;master *&lt;span style=&#34;color: #d0d0d0&#34;&gt;)]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;シェル起動時に-bashrc-が読み込まれない場合&#34;&gt;シェル起動時に .bashrc が読み込まれない場合&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;.bash_profile&lt;/code&gt; に以下を追加する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #6ab825; font-weight: bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;[&lt;/span&gt; -f ~/.bashrc &lt;span style=&#34;color: #d0d0d0&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color: #d0d0d0&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color: #6ab825; font-weight: bold&#34;&gt;then&lt;/span&gt;
+. ~/.bashrc
+&lt;span style=&#34;color: #6ab825; font-weight: bold&#34;&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&#34;bash-completion-のインストール&#34;&gt;bash-completion のインストール&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #999999; font-style: italic&#34;&gt;# ダウンロード&lt;/span&gt;
+wget http://bash-completion.alioth.debian.org/files/bash-completion-1.2.tar.bz2
+
+&lt;span style=&#34;color: #999999; font-style: italic&#34;&gt;# インストール&lt;/span&gt;
+tar xvjf bash-completion-1.2.tar.bz2
+&lt;span style=&#34;color: #24909d&#34;&gt;cd&lt;/span&gt; bash-completion-1.2
+./configure
+make
+sudo make install
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;/usr/local/etc&lt;/code&gt; に &lt;code&gt;bash_completion.d&lt;/code&gt; としてインストールされる&lt;/p&gt;
+
+&lt;h2 id=&#34;git-prompt-sh-のインストール&#34;&gt;git-prompt.sh のインストール&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+sudo mv /usr/local/etc/bash_completion.d/git-prompt.sh
+&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://git-prompt.sh/&#34;&gt;git-prompt.sh ダウンロードページ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;git-completion-bash-のインストール&#34;&gt;git-completion.bash のインストール&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;wget &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;#39;http://git.kernel.org/?p=git/git.git;a=blob_plain;f=contrib/completion/git-completion.bash;hb=HEAD&amp;#39;&lt;/span&gt; -O git-completion.bash
+sudo mv git-completion.bash /usr/local/etc/bash_completion.d/git
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;bashrc-の編集&#34;&gt;~/.bashrc の編集&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;# プロンプトに git のブランチ名を表示する
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1=&#39;[\[\033[32m\]@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]]\&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;bashrc-の読み込み&#34;&gt;~/.bashrc の読み込み&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #24909d&#34;&gt;source&lt;/span&gt; .bashrc
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&#34;エラーが出た場合&#34;&gt;エラーが出た場合。&lt;/h2&gt;
+
+&lt;p&gt;インストールが上手くいってないと、以下のエラーが出る。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;-bash: __git_ps1: &lt;span style=&#34;color: #24909d&#34;&gt;command&lt;/span&gt; not found
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;/usr/local/etc/bash_completion.d&lt;/code&gt; 以下に、&lt;code&gt;git-prompt.sh&lt;/code&gt; と &lt;code&gt;git-completion.bash&lt;/code&gt; があるか確認する。&lt;/p&gt;
+</description>
+                </item>
+            
+        
+    </channel>
+</rss>

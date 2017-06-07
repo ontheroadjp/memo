@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MEMO</title>
+        <generator uri="https://hugo.spf13.com">Hugo</generator>
+        <link>https://ontheroadjp.github.io/memo/categories/git/</link>
+        <language>ja-JP</language>
+        <author>ontheroad_jp</author>
+        <copyright>2017 ontheroad.jp</copyright>
+            <updated>Sun, 21 May 2017 06:29:00 UTC</updated>
+            
+                
+                <item>
+                    <title>Git stash</title>
+                    <link>https://ontheroadjp.github.io/memo/dev/git/git-stash-command/</link>
+                    <pubDate>Sun, 21 May 2017 06:29:00 UTC</pubDate>
+                    <author>ontheroad_jp</author>
+                    <guid>https://ontheroadjp.github.io/memo/dev/git/git-stash-command/</guid>
+                    <description>
+
+&lt;p&gt;gitは、とにかくトピックブランチを作成して作業する。だいたい機能追加とかバグ修正とかの単位でブランチを作って作業します。（ちゃんとやってますよね？）&lt;/p&gt;
+
+&lt;p&gt;なので、作業の途中で別の修正を優先してお願いっ！なんて言われたときは、別のブランチに切り替えて作業をする必要がでてくる。そんな時に変更を一時的に退避しておくことのできる機能、それが &lt;code&gt;stash&lt;/code&gt; である。&lt;/p&gt;
+
+&lt;p&gt;では、早速使い方&lt;/p&gt;
+
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+
+&lt;h3 id=&#34;stash-へ退避&#34;&gt;stash へ退避&lt;/h3&gt;
+
+&lt;p&gt;まだ &lt;code&gt;commit&lt;/code&gt;していない状態の変更ファイル（&lt;code&gt;add&lt;/code&gt; してる or &lt;code&gt;add&lt;/code&gt; していない)が存在する状況で、次のコマンドを実行すると変更ファイルを退避することができる。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash save
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;※ saveは、省略することもできる。&lt;/p&gt;
+
+&lt;p&gt;これでファイルの退避完了！&lt;code&gt;git status&lt;/code&gt;とか見てみると変更状態であったファイルがなくなっている。この状態なら安心してブランチを切り替えることもできる。めでたしめでたし。&lt;/p&gt;
+
+&lt;p&gt;と、退避だけならこれで終わりだけど、次につかうときに変更ファイルを取り出したい。&lt;/p&gt;
+
+&lt;h3 id=&#34;stash-の中身-退避しているモノ-の確認&#34;&gt;stash の中身（退避しているモノ）の確認&lt;/h3&gt;
+
+&lt;p&gt;まずは、いまどんな変更を退避しているかを確認
+2つの変更を保存している状態（2回stashを行った状態）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash list
+stash@&lt;span style=&#34;color: #d0d0d0&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color: #3677a9&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;}&lt;/span&gt;: WIP on sub: a0d2f1b add fourth line
+stash@&lt;span style=&#34;color: #d0d0d0&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color: #3677a9&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;}&lt;/span&gt;: WIP on sub: 1a61919 add second line
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;&amp;lt;stash名&amp;gt;: WIP on &amp;lt;stashを行ったブランチ名&amp;gt;: &amp;lt;ハッシュ&amp;gt; &amp;lt;コミットコメント&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;※ハッシュ、コミットコメントは &lt;code&gt;stash&lt;/code&gt; を行った時の HEAD のもの&lt;/p&gt;
+
+&lt;p&gt;次のようにすると、さらに変更内容もみれるので便利！（&lt;code&gt;git log&lt;/code&gt; のオプションが使える）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash list -p
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;さらに各変更について詳しく見たい場合、変更内容に含まれるファイルの一覧が見れる。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash show &amp;lt;stash名&amp;gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;stash-から取り込む&#34;&gt;stash から取り込む&lt;/h3&gt;
+
+&lt;p&gt;復活させたい stash 名がわかったら次のコマンドで取り出すことができる。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash apply stash@&lt;span style=&#34;color: #d0d0d0&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color: #3677a9&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;stash apply&lt;/code&gt; で変更を復活した場合は、stash リストのなかに復活済みの変更が残されているこれを削除するには、次のコマンドを使用する。&lt;/p&gt;
+
+&lt;h3 id=&#34;stash-の削除&#34;&gt;stash の削除&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash drop &amp;lt;消したいstash名&amp;gt;
+$ git stash drop stash@&lt;span style=&#34;color: #d0d0d0&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color: #3677a9&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color: #999999; font-style: italic&#34;&gt;# ex.&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h3 id=&#34;stash-からの取り込みと削除の同時実行&#34;&gt;stash からの取り込みと削除の同時実行&lt;/h3&gt;
+
+&lt;p&gt;変更の復活と、削除を同時に行う。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash pop stash@&lt;span style=&#34;color: #d0d0d0&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color: #3677a9&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color: #d0d0d0&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;stash&lt;/code&gt; が溜まってくると、なんの変更だったか、どれが必要な変更だったかわからなくなるのでこまめに消したり管理するのが大切ですよー&lt;/p&gt;
+
+&lt;h2 id=&#34;応用&#34;&gt;応用&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;git apply&lt;/code&gt; で、変更を復活して適用したんだけど、やっぱやめとこうってときにこんなこんなやりかたで取り消せます。前半は &lt;code&gt;git stash show -p&lt;/code&gt; でパッチ形式で出力、それを &lt;code&gt;git apply -R&lt;/code&gt; でパッチを逆に適用しています。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;$ git stash show &amp;lt;適用したstash名&amp;gt; -p &lt;span style=&#34;color: #d0d0d0&#34;&gt;|&lt;/span&gt; git apply -R
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+                </item>
+            
+        
+    </channel>
+</rss>

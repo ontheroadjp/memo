@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>MEMO</title>
+        <generator uri="https://hugo.spf13.com">Hugo</generator>
+        <link>https://ontheroadjp.github.io/memo/tags/github/</link>
+        <language>ja-JP</language>
+        <author>ontheroad_jp</author>
+        <copyright>2017 ontheroad.jp</copyright>
+            <updated>Sun, 21 May 2017 06:29:00 UTC</updated>
+            
+                
+                <item>
+                    <title>Github で dotfiles を管理する</title>
+                    <link>https://ontheroadjp.github.io/memo/dev/git/manage-dotfiles-by-git/</link>
+                    <pubDate>Sun, 21 May 2017 06:29:00 UTC</pubDate>
+                    <author>ontheroad_jp</author>
+                    <guid>https://ontheroadjp.github.io/memo/dev/git/manage-dotfiles-by-git/</guid>
+                    <description>&lt;div class=&#34;highlight&#34; style=&#34;background: #202020&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;mkdir ~/dotfiles &lt;span style=&#34;color: #d0d0d0&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color: #24909d&#34;&gt;cd&lt;/span&gt; ./dotfiles
+mv ~/.bashrc dotfiles
+mv ~/.bash_profile dotfiles
+mv ~/.bash_history dotfiles
+
+ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/dotfiles/.bash_history ~/.bash_history
+
+&lt;span style=&#34;color: #24909d&#34;&gt;cd&lt;/span&gt; ~/dotfiles
+git init
+git add -A
+git commit -m &lt;span style=&#34;color: #ed9d13&#34;&gt;&amp;quot;initial commit&amp;quot;&lt;/span&gt;
+git remote add origin http://github.com/ontheroadjp/dotfiles.git
+git push -u origin master
+&lt;/pre&gt;&lt;/div&gt;
+</description>
+                </item>
+            
+        
+    </channel>
+</rss>

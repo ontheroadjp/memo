@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+        
+    <head>
+        <link href="https://gmpg.org/xfn/11" rel="profile">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        
+
+        <title>Git stash  &middot; MEMO </title>
+
+        
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/poole.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/syntax.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+        
+        <link rel="manifest" href="https://ontheroadjp.github.io/memo//manifest.json">
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/mobile/apple-touch-icon.png">
+
+        
+        <meta name="theme-color" content="#ffffff">
+
+        
+        <link rel="mask-icon" href="/images/mobile/pinned-icon-150x150.svg" color="#5bbad5">
+
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+        
+        <link href="" rel="alternate" type="application/rss+xml" title="MEMO" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+        <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Fira Sans']
+                }
+            });
+        </script>
+    </head>
+    <body class="theme-blue">
+
+<div class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about" align=center>
+
+            <a href="https://ontheroadjp.github.io/memo/">
+                
+                    <img src="/memo/images/logo-512x512-white.png" width=50% />
+                
+            </a>
+
+            <p class="lead">
+                 
+                    Memos of the WEB Development 
+                
+            </p>
+
+        </div>
+
+        <ul class="sidebar-nav">
+            <li><a href="https://ontheroadjp.github.io/memo//dev">Posts</a></li>
+            
+                <li><a href="/memo/about/">About </a></li>
+            
+            <br/> 
+            <li>Code:</li>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+            
+        </ul>
+
+        <a href="https://twitter.com/natethefinch"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+        
+        
+        <a href="https://github.com/ontheroadjp"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+        <a href="https://plus.google.com/&#43;NateFinch"><i class="fa fa-google-plus"></i></a> 
+
+        <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/> &copy; 2017 Nate Finch. All rights reserved.</p>
+
+    </div>
+</div>
+
+
+    <div class="content container">
+        <div class="post">
+            <h1 class="post-title">
+
+                Git stash
+            </h1>
+            <nav class="post-meta" style="margin-bottom: 20px">
+                <span class="post-date">
+                    May 21, 2017
+                </span> | 
+
+                
+                    
+                        <span class="category">
+                            <a href="/categories/Git/">
+                                Git
+                            </a>
+                        </span>
+                    
+                
+
+                
+                    
+                        <span class="tag">
+                            <a href="/memo/tags/git">
+                                # Git
+                            </a>
+                        </span>
+                    
+                
+            </nav>
+
+            
+
+            
+
+<p>gitは、とにかくトピックブランチを作成して作業する。だいたい機能追加とかバグ修正とかの単位でブランチを作って作業します。（ちゃんとやってますよね？）</p>
+
+<p>なので、作業の途中で別の修正を優先してお願いっ！なんて言われたときは、別のブランチに切り替えて作業をする必要がでてくる。そんな時に変更を一時的に退避しておくことのできる機能、それが <code>stash</code> である。</p>
+
+<p>では、早速使い方</p>
+
+<h2 id="使い方">使い方</h2>
+
+<h3 id="stash-へ退避">stash へ退避</h3>
+
+<p>まだ <code>commit</code>していない状態の変更ファイル（<code>add</code> してる or <code>add</code> していない)が存在する状況で、次のコマンドを実行すると変更ファイルを退避することができる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash save
+</pre></div>
+
+<p>※ saveは、省略することもできる。</p>
+
+<p>これでファイルの退避完了！<code>git status</code>とか見てみると変更状態であったファイルがなくなっている。この状態なら安心してブランチを切り替えることもできる。めでたしめでたし。</p>
+
+<p>と、退避だけならこれで終わりだけど、次につかうときに変更ファイルを取り出したい。</p>
+
+<h3 id="stash-の中身-退避しているモノ-の確認">stash の中身（退避しているモノ）の確認</h3>
+
+<p>まずは、いまどんな変更を退避しているかを確認
+2つの変更を保存している状態（2回stashを行った状態）</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash list
+stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span>: WIP on sub: a0d2f1b add fourth line
+stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">}</span>: WIP on sub: 1a61919 add second line
+</pre></div>
+
+<p><code>&lt;stash名&gt;: WIP on &lt;stashを行ったブランチ名&gt;: &lt;ハッシュ&gt; &lt;コミットコメント&gt;</code></p>
+
+<p>※ハッシュ、コミットコメントは <code>stash</code> を行った時の HEAD のもの</p>
+
+<p>次のようにすると、さらに変更内容もみれるので便利！（<code>git log</code> のオプションが使える）</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash list -p
+</pre></div>
+
+<p>さらに各変更について詳しく見たい場合、変更内容に含まれるファイルの一覧が見れる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash show &lt;stash名&gt;
+</pre></div>
+
+<h3 id="stash-から取り込む">stash から取り込む</h3>
+
+<p>復活させたい stash 名がわかったら次のコマンドで取り出すことができる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash apply stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<p><code>stash apply</code> で変更を復活した場合は、stash リストのなかに復活済みの変更が残されているこれを削除するには、次のコマンドを使用する。</p>
+
+<h3 id="stash-の削除">stash の削除</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash drop &lt;消したいstash名&gt;
+$ git stash drop stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span> <span style="color: #999999; font-style: italic"># ex.</span>
+</pre></div>
+
+<h3 id="stash-からの取り込みと削除の同時実行">stash からの取り込みと削除の同時実行</h3>
+
+<p>変更の復活と、削除を同時に行う。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash pop stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<p><code>stash</code> が溜まってくると、なんの変更だったか、どれが必要な変更だったかわからなくなるのでこまめに消したり管理するのが大切ですよー</p>
+
+<h2 id="応用">応用</h2>
+
+<p><code>git apply</code> で、変更を復活して適用したんだけど、やっぱやめとこうってときにこんなこんなやりかたで取り消せます。前半は <code>git stash show -p</code> でパッチ形式で出力、それを <code>git apply -R</code> でパッチを逆に適用しています。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash show &lt;適用したstash名&gt; -p <span style="color: #d0d0d0">|</span> git apply -R
+</pre></div>
+
+
+             
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname == "localhost") 
+            return;
+    
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+    
+        var disqus_shortname = 'hogecom';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the comments powered by 
+    <a href="http://disqus.com/?ref_noscript">Disqus.</a>
+</noscript>
+
+        </div>
+    </div> 
+
+</body>
+</html>
+

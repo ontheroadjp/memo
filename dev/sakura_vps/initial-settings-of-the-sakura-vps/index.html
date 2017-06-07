@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+        
+    <head>
+        <link href="https://gmpg.org/xfn/11" rel="profile">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        
+
+        <title>さくら VPS 初期設定  &middot; MEMO </title>
+
+        
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/poole.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/syntax.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+        
+        <link rel="manifest" href="https://ontheroadjp.github.io/memo//manifest.json">
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/mobile/apple-touch-icon.png">
+
+        
+        <meta name="theme-color" content="#ffffff">
+
+        
+        <link rel="mask-icon" href="/images/mobile/pinned-icon-150x150.svg" color="#5bbad5">
+
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+        
+        <link href="" rel="alternate" type="application/rss+xml" title="MEMO" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+        <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Fira Sans']
+                }
+            });
+        </script>
+    </head>
+    <body class="theme-blue">
+
+<div class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about" align=center>
+
+            <a href="https://ontheroadjp.github.io/memo/">
+                
+                    <img src="/memo/images/logo-512x512-white.png" width=50% />
+                
+            </a>
+
+            <p class="lead">
+                 
+                    Memos of the WEB Development 
+                
+            </p>
+
+        </div>
+
+        <ul class="sidebar-nav">
+            <li><a href="https://ontheroadjp.github.io/memo//dev">Posts</a></li>
+            
+                <li><a href="/memo/about/">About </a></li>
+            
+            <br/> 
+            <li>Code:</li>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+            
+        </ul>
+
+        <a href="https://twitter.com/natethefinch"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+        
+        
+        <a href="https://github.com/ontheroadjp"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+        <a href="https://plus.google.com/&#43;NateFinch"><i class="fa fa-google-plus"></i></a> 
+
+        <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/> &copy; 2017 Nate Finch. All rights reserved.</p>
+
+    </div>
+</div>
+
+
+    <div class="content container">
+        <div class="post">
+            <h1 class="post-title">
+
+                さくら VPS 初期設定
+            </h1>
+            <nav class="post-meta" style="margin-bottom: 20px">
+                <span class="post-date">
+                    Apr 19, 2017
+                </span> | 
+
+                
+
+                
+                    
+                        <span class="tag">
+                            <a href="/memo/tags/%E3%81%95%E3%81%8F%E3%82%89-vps">
+                                # さくら VPS
+                            </a>
+                        </span>
+                    
+                
+            </nav>
+
+            
+
+            
+
+<h1 id="さくら-vps-の基本設定">さくら VPS の基本設定</h1>
+
+<h2 id="ホスト名の設定">ホスト名の設定</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ vim /etc/sysconfig/network
+
+<span style="color: #999999; font-style: italic">#HOSTNAME=localhost.localdomain</span>
+<span style="color: #40ffff">HOSTNAME</span><span style="color: #d0d0d0">=</span>NOBITA.localdomain
+</pre></div>
+
+<h2 id="vnc-コンソールのキー配列の設定">VNC コンソールのキー配列の設定</h2>
+
+<p>MacBookPro US 配列からさくらVPS の CentOS6.7（標準OS）へ、さくらのVNC コンソール経由で接続すると、キー入力が正しく行えないので、キーボード設定を正しく設定する必要がある。</p>
+
+<p>キーボード設定は <code>さくらVPS の設定</code> と <code>CentOS の設定</code> を行う必要あり。</p>
+
+<h3 id="1-さくらvps-の設定">1. さくらVPS の設定</h3>
+
+<ul>
+<li><p><a href="https://secure.sakura.ad.jp/vps/#/login">VPSコントロールパネル</a>にログイン後、画面右上の <code>設定</code> メニューから <code>サーバー情報編集</code> を選択して <code>VNC コンソールキー配列</code> から <code>en-us</code> を選択する。</p></li>
+
+<li><p>CentOS を再起動すると変更が有効になる。</p></li>
+</ul>
+
+<p>参考：<a href="https://help.sakura.ad.jp/app/answers/detail/a_id/2406/related/1">さくらのサポート情報:キー配列の変更方法</a></p>
+
+<h3 id="2-centos-の設定">2. CentOS の設定</h3>
+
+<ul>
+<li><code>$ loadkeys us</code> コマンドで US 配列になる（ちゃんと入力できるようになる）けど、CentOS を再起動するたびに設定をしなければならない。</li>
+
+<li><p>なので、とりあえず <code>$ loadkeys us</code> でちゃんと入力できるようにしてから、 <code>/etc/sysconfig/keyboard</code> の中を、</p>
+
+<pre><code>KEYTABLE=&quot;us&quot;
+MODEL=&quot;pc105+inet&quot;
+LAYOUT=&quot;us&quot;
+KEYBOARDTYPE=&quot;pc&quot;
+</code></pre>
+
+<p>に変更する。</p></li>
+
+<li><p><code>$ loadkeys us</code> する前に、<code>vi</code> を起動すると <code>:</code> が入力できなくて、強制再起動する羽目になる。</p></li>
+</ul>
+
+<h2 id="ssh-接続の設定">SSH 接続の設定</h2>
+
+<h3 id="1-秘密鍵と公開鍵ペアの生成">1. 秘密鍵と公開鍵ペアの生成</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key <span style="color: #d0d0d0">(</span>/Users/username/.ssh/id_rsa<span style="color: #d0d0d0">)</span>:  ← 作成される場所。問題なければEnter。
+Enter passphrase <span style="color: #d0d0d0">(</span>empty <span style="color: #6ab825; font-weight: bold">for</span> no passphrase<span style="color: #d0d0d0">)</span>:  ← パスフレーズの入力。省略する場合はそのままEnter。
+Enter same passphrase again:  ← パスフレーズの再入力。省略した場合はそのままEnter。
+</pre></div>
+
+<p>上記実行すると、<code>~/.ssh/</code> に秘密鍵（<code>id_rsa</code>）と公開鍵（<code>id_rsa.pub</code>）が生成される。</p>
+
+<h3 id="2-さくらvps-へ公開鍵を配置">2. さくらVPS へ公開鍵を配置</h3>
+
+<p>SSH 接続したいユーザーのホームディレクトリに <code>.ssh/</code> を作成し、<code>authorized_keys</code> という名前で保存する。</p>
+
+<p><code>~/.ssh/authorized_keys</code></p>
+
+<h3 id="3-ssh-接続元の設定">3. SSH 接続元の設定</h3>
+
+<p><code>~/.ssh/config</code> に以下の内容を記入して保存すると <code>$ ssh &lt;ホスト名&gt;</code> で接続できる。</p>
+
+<p>設定例</p>
+
+<pre><code>$cat ~/.ssh/config
+
+Host sakuraroot
+	HostName xxx.xxx.xxx.xxx
+	Port 22
+	User root
+ 
+Host sakura
+	HostName xxx.xxx.xxx.xxx
+	Port 10022
+	User nobita
+</code></pre>
+
+<p>SSH 接続</p>
+
+<pre><code>$ ssh sakura
+</code></pre>
+
+<ol>
+<li><p>コンソール VPS でログイン</p>
+
+<ul>
+<li>ユーザー名： root</li>
+<li>パスワード： インストール時に設定したパスワード</li>
+</ul></li>
+
+<li><p>root で SSH 接続設定</p>
+
+<ul>
+<li><code>~/.ssh/config</code> を作成する</li>
+<li>接続時に root パスワード聞かれる（パスワード認証）</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #40ffff">$vim</span> ~/.ssh/config
+    
+Host sakuraroot
+    HostName xxx.xxx.xxx.xxx
+    Port <span style="color: #3677a9">22</span>
+    User root
+</pre></div></li>
+
+<li><p><code>$ ssh sakuraroot</code> で SSH 接続確認</p></li>
+
+<li><p>Chef solo のインストール</p>
+
+<ul>
+<li>接続時に root パスワード聞かれる（パスワード認証）</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ knife solo prepare sakuraroot
+</pre></div></li>
+
+<li><p>Chef solo の実行</p>
+
+<ul>
+<li>接続時に root パスワード聞かれる（パスワード認証）</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ knife solo cook sakuraroot
+</pre></div>
+
+<ul>
+<li>Chef solo 実行後は <code>$ ssh sakuraroot</code> では SSH 接続ができなくなる（SSH ポートが 22番から 10022番へ変更となるため）</li>
+</ul></li>
+
+<li><p>一般ユーザーで SSH 接続</p>
+
+<ul>
+<li><code>~/.ssh/config</code> に以下を追記</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #40ffff">$vim</span> ~/.ssh/config
+    
+Host sakura
+    HostName xxx.xxx.xxx.xxx
+    Port <span style="color: #3677a9">10022</span>
+    User nobita
+</pre></div>
+
+<ul>
+<li>接続できたら <code>$ su -</code> で root 権限が得られるか確認</li>
+<li><code>sudo</code> も確認。例）<code>$ sudo iptables -L</code></li>
+</ul></li>
+</ol>
+
+
+             
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname == "localhost") 
+            return;
+    
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+    
+        var disqus_shortname = 'hogecom';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the comments powered by 
+    <a href="http://disqus.com/?ref_noscript">Disqus.</a>
+</noscript>
+
+        </div>
+    </div> 
+
+</body>
+</html>
+

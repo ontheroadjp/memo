@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+        
+    <head>
+        <link href="https://gmpg.org/xfn/11" rel="profile">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        
+
+        <title>Git log の設定  &middot; MEMO </title>
+
+        
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/poole.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/syntax.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+        
+        <link rel="manifest" href="https://ontheroadjp.github.io/memo//manifest.json">
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/mobile/apple-touch-icon.png">
+
+        
+        <meta name="theme-color" content="#ffffff">
+
+        
+        <link rel="mask-icon" href="/images/mobile/pinned-icon-150x150.svg" color="#5bbad5">
+
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+        
+        <link href="" rel="alternate" type="application/rss+xml" title="MEMO" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+        <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Fira Sans']
+                }
+            });
+        </script>
+    </head>
+    <body class="theme-blue">
+
+<div class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about" align=center>
+
+            <a href="https://ontheroadjp.github.io/memo/">
+                
+                    <img src="/memo/images/logo-512x512-white.png" width=50% />
+                
+            </a>
+
+            <p class="lead">
+                 
+                    Memos of the WEB Development 
+                
+            </p>
+
+        </div>
+
+        <ul class="sidebar-nav">
+            <li><a href="https://ontheroadjp.github.io/memo//dev">Posts</a></li>
+            
+                <li><a href="/memo/about/">About </a></li>
+            
+            <br/> 
+            <li>Code:</li>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+            
+        </ul>
+
+        <a href="https://twitter.com/natethefinch"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+        
+        
+        <a href="https://github.com/ontheroadjp"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+        <a href="https://plus.google.com/&#43;NateFinch"><i class="fa fa-google-plus"></i></a> 
+
+        <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/> &copy; 2017 Nate Finch. All rights reserved.</p>
+
+    </div>
+</div>
+
+
+    <div class="content container">
+        <div class="post">
+            <h1 class="post-title">
+
+                Git log の設定
+            </h1>
+            <nav class="post-meta" style="margin-bottom: 20px">
+                <span class="post-date">
+                    May 21, 2017
+                </span> | 
+
+                
+
+                
+                    
+                        <span class="tag">
+                            <a href="/memo/tags/git">
+                                # Git
+                            </a>
+                        </span>
+                    
+                
+            </nav>
+
+            
+
+            
+
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git lg
+git log --oneline --graph
+</pre></div>
+
+<h2 id="エイリアスの設定">エイリアスの設定</h2>
+
+<p><code>~/.gitconfig</code> に以下を追加すると <code>git lg</code> または git lga`` が使える</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #d0d0d0">[</span>alias<span style="color: #d0d0d0">]</span>
+<span style="color: #40ffff">lg</span> <span style="color: #d0d0d0">=</span> log --graph --pretty<span style="color: #d0d0d0">=</span>format:<span style="color: #ed9d13">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit --date<span style="color: #d0d0d0">=</span>relative
+<span style="color: #40ffff">lga</span> <span style="color: #d0d0d0">=</span> log --graph --all --pretty<span style="color: #d0d0d0">=</span>format:<span style="color: #ed9d13">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit --date<span style="color: #d0d0d0">=</span>relative
+</pre></div>
+
+
+             
+
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    (function() {
+        
+        
+        if (window.location.hostname == "localhost") 
+            return;
+    
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+    
+        var disqus_shortname = 'hogecom';
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the comments powered by 
+    <a href="http://disqus.com/?ref_noscript">Disqus.</a>
+</noscript>
+
+        </div>
+    </div> 
+
+</body>
+</html>
+

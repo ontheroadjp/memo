@@ -1,0 +1,1823 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+        
+    <head>
+	<meta name="generator" content="Hugo 0.21" />
+        <link href="https://gmpg.org/xfn/11" rel="profile">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        
+
+        <title>MEMO </title>
+
+        
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/poole.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/syntax.css">
+        <link rel="stylesheet" href="https://ontheroadjp.github.io/memo/css/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+        
+        <link rel="manifest" href="https://ontheroadjp.github.io/memo//manifest.json">
+
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/mobile/apple-touch-icon.png">
+
+        
+        <meta name="theme-color" content="#ffffff">
+
+        
+        <link rel="mask-icon" href="/images/mobile/pinned-icon-150x150.svg" color="#5bbad5">
+
+        
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+        
+        <link href="https://ontheroadjp.github.io/memo/index.xml" rel="alternate" type="application/rss+xml" title="MEMO" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,300' rel='stylesheet' type='text/css'>
+        <script src="//ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+        <script>
+            WebFont.load({
+                google: {
+                    families: ['Fira Sans']
+                }
+            });
+        </script>
+    </head>
+    <body class="theme-blue">
+
+<div class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about" align=center>
+
+            <a href="https://ontheroadjp.github.io/memo/">
+                
+                    <img src="/memo/images/logo-512x512-white.png" width=50% />
+                
+            </a>
+
+            <p class="lead">
+                 
+                    Memos of the WEB Development 
+                
+            </p>
+
+        </div>
+
+        <ul class="sidebar-nav">
+            <li><a href="https://ontheroadjp.github.io/memo//dev">Posts</a></li>
+            
+                <li><a href="/memo/about/">About </a></li>
+            
+            <br/> 
+            <li>Code:</li>
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+            
+        </ul>
+
+        <a href="https://twitter.com/natethefinch"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp; 
+        
+        
+        <a href="https://github.com/ontheroadjp"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp; 
+        <a href="https://plus.google.com/&#43;NateFinch"><i class="fa fa-google-plus"></i></a> 
+
+        <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/> &copy; 2017 Nate Finch. All rights reserved.</p>
+
+    </div>
+</div>
+
+
+    <div class="content container">
+
+        <div class="posts">
+
+            
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/git-checkout-command/">
+                                Git checkout
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        
+
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git show ＜ブランチ名＞:＜ファイル名＞
+</pre></div>
+
+<h3 id="特定ファイルの取得">特定ファイルの取得</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git checkout ＜ブランチ名＞ ＜ファイル名＞
+</pre></div>
+
+<h3 id="特定のディレクトリの取得">特定のディレクトリの取得</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git checkout ＜ブランチ名＞ ＜ディレクトリ名＞
+</pre></div>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/git-log-settings/">
+                                Git log の設定
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        
+
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git lg
+git log --oneline --graph
+</pre></div>
+
+<h2 id="エイリアスの設定">エイリアスの設定</h2>
+
+<p><code>~/.gitconfig</code> に以下を追加すると <code>git lg</code> または git lga`` が使える</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #d0d0d0">[</span>alias<span style="color: #d0d0d0">]</span>
+<span style="color: #40ffff">lg</span> <span style="color: #d0d0d0">=</span> log --graph --pretty<span style="color: #d0d0d0">=</span>format:<span style="color: #ed9d13">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit --date<span style="color: #d0d0d0">=</span>relative
+<span style="color: #40ffff">lga</span> <span style="color: #d0d0d0">=</span> log --graph --all --pretty<span style="color: #d0d0d0">=</span>format:<span style="color: #ed9d13">&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;</span> --abbrev-commit --date<span style="color: #d0d0d0">=</span>relative
+</pre></div>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/error-403-in-git-push/">
+                                Git push で 403 エラー
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        <p><code>git push</code> した時に以下のような 403 エラーが出た。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>error: The requested URL returned error: <span style="color: #3677a9">403</span> Forbidden <span style="color: #6ab825; font-weight: bold">while</span> accessing https://xxxxx
+</pre></div>
+
+<p>設定を確認してみる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git config --list
+
+--省略--
+remote.origin.fetch<span style="color: #d0d0d0">=</span>+refs/heads/*:refs/remotes/origin/*
+remote.origin.url<span style="color: #d0d0d0">=</span>https://github.com/username/repository.git
+--省略--
+</pre></div>
+
+<p><code>remote.origin.url</code> に github のアカウント名を追加してみる。（以下の <code>&lt;username&gt;@</code> の場所）</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git remote set-url origin https://&lt;username&gt;@github.com/username/repository.git
+</pre></div>
+
+<p>っでもう一度 <code>git push</code></p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git push origin master
+password:
+</pre></div>
+
+<p>パスワードを聞かれるので github のパスワードを入力したら無事に <code>git push</code> できた。</p>
+
+<pre><code>Counting objects: 22, done.
+Delta compression using up to 3 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (12/12), 1.21 KiB, done.
+Total 12 (delta 4), reused 0 (delta 0)
+To https://&lt;username&gt;@github.com/username/registory.git
+   9c7e824..36cf324  master -&gt; master
+</code></pre>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/git-stash-command/">
+                                Git stash
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        
+
+<p>gitは、とにかくトピックブランチを作成して作業する。だいたい機能追加とかバグ修正とかの単位でブランチを作って作業します。（ちゃんとやってますよね？）</p>
+
+<p>なので、作業の途中で別の修正を優先してお願いっ！なんて言われたときは、別のブランチに切り替えて作業をする必要がでてくる。そんな時に変更を一時的に退避しておくことのできる機能、それが <code>stash</code> である。</p>
+
+<p>では、早速使い方</p>
+
+<h2 id="使い方">使い方</h2>
+
+<h3 id="stash-へ退避">stash へ退避</h3>
+
+<p>まだ <code>commit</code>していない状態の変更ファイル（<code>add</code> してる or <code>add</code> していない)が存在する状況で、次のコマンドを実行すると変更ファイルを退避することができる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash save
+</pre></div>
+
+<p>※ saveは、省略することもできる。</p>
+
+<p>これでファイルの退避完了！<code>git status</code>とか見てみると変更状態であったファイルがなくなっている。この状態なら安心してブランチを切り替えることもできる。めでたしめでたし。</p>
+
+<p>と、退避だけならこれで終わりだけど、次につかうときに変更ファイルを取り出したい。</p>
+
+<h3 id="stash-の中身-退避しているモノ-の確認">stash の中身（退避しているモノ）の確認</h3>
+
+<p>まずは、いまどんな変更を退避しているかを確認
+2つの変更を保存している状態（2回stashを行った状態）</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash list
+stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span>: WIP on sub: a0d2f1b add fourth line
+stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">}</span>: WIP on sub: 1a61919 add second line
+</pre></div>
+
+<p><code>&lt;stash名&gt;: WIP on &lt;stashを行ったブランチ名&gt;: &lt;ハッシュ&gt; &lt;コミットコメント&gt;</code></p>
+
+<p>※ハッシュ、コミットコメントは <code>stash</code> を行った時の HEAD のもの</p>
+
+<p>次のようにすると、さらに変更内容もみれるので便利！（<code>git log</code> のオプションが使える）</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash list -p
+</pre></div>
+
+<p>さらに各変更について詳しく見たい場合、変更内容に含まれるファイルの一覧が見れる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash show &lt;stash名&gt;
+</pre></div>
+
+<h3 id="stash-から取り込む">stash から取り込む</h3>
+
+<p>復活させたい stash 名がわかったら次のコマンドで取り出すことができる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash apply stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<p><code>stash apply</code> で変更を復活した場合は、stash リストのなかに復活済みの変更が残されているこれを削除するには、次のコマンドを使用する。</p>
+
+<h3 id="stash-の削除">stash の削除</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash drop &lt;消したいstash名&gt;
+$ git stash drop stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span> <span style="color: #999999; font-style: italic"># ex.</span>
+</pre></div>
+
+<h3 id="stash-からの取り込みと削除の同時実行">stash からの取り込みと削除の同時実行</h3>
+
+<p>変更の復活と、削除を同時に行う。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash pop stash@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<p><code>stash</code> が溜まってくると、なんの変更だったか、どれが必要な変更だったかわからなくなるのでこまめに消したり管理するのが大切ですよー</p>
+
+<h2 id="応用">応用</h2>
+
+<p><code>git apply</code> で、変更を復活して適用したんだけど、やっぱやめとこうってときにこんなこんなやりかたで取り消せます。前半は <code>git stash show -p</code> でパッチ形式で出力、それを <code>git apply -R</code> でパッチを逆に適用しています。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash show &lt;適用したstash名&gt; -p <span style="color: #d0d0d0">|</span> git apply -R
+</pre></div>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/make-backups-by-git/">
+                                Git で バックアップ
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        
+
+<h2 id="やりたいこと">やりたいこと</h2>
+
+<ul>
+<li>今まで作業ディレクトリを bk_yyyy_mm_dd_ディレクトリ名.zip みたいにコピー&amp;圧縮してバックアップを取っていたものを git を使ってやってみたい。</li>
+<li>中途半端な状態であろうがなんだろうがとにかく保存（バックアップ）したい。</li>
+</ul>
+
+<h2 id="運用方法">運用方法</h2>
+
+<ul>
+<li>バックアップ用のブランチをつくる。</li>
+<li>普段はバックアップ用のブランチで作業。</li>
+<li>バックアップする時は中途半端だろうがなんだろうが add -A して commit。</li>
+<li>いちいち add -A して commit は面倒くさいので シェルスクリプトで。</li>
+<li>コミット時のメモに日時を付け加えて、いつ時点のバックアップかをわかるように。</li>
+<li>clone で定期実行してもいいけど今はしていない。</li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://qiita.com/irxground/items/80dc6432e7d9d2b8b2a9">gitで定期的にファイルをバックアップする</a></li>
+</ul>
+
+<h2 id="手順">手順</h2>
+
+<ol>
+<li><p>バックアップ用のブランチを作成してバックアップブランチへ移動する</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git checkout -b bk
+</pre></div></li>
+
+<li><p>シェルスクリプトを作成して適当な名前で保存（<code>backup.sh</code> など）</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic">#!/bin/bash</span>
+<span style="color: #24909d">set</span> -e
+<span style="color: #40ffff">content_dir</span><span style="color: #d0d0d0">=</span><span style="color: #ed9d13">&quot;バックアップ対象のディレクトリ&quot;</span>
+
+<span style="color: #24909d">set</span> -x
+<span style="color: #24909d">cd</span> <span style="color: #ed9d13">&quot;</span><span style="color: #40ffff">$content_dir</span><span style="color: #ed9d13">&quot;</span>
+git add -A
+git commit -m <span style="color: #ed9d13">&quot;backup at </span><span style="color: #6ab825; font-weight: bold">$(</span>date <span style="color: #ed9d13">&quot;+%Y-%m-%d %T&quot;</span><span style="color: #6ab825; font-weight: bold">)</span><span style="color: #ed9d13">&quot;</span> <span style="color: #d0d0d0">||</span> <span style="color: #24909d">true</span>
+git push -f origin bk
+</pre></div></li>
+</ol>
+
+<ul>
+<li><p>バックアップ対象のディレクトリはフルパスで指定<br />
+例：</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #40ffff">content_dir</span><span style="color: #d0d0d0">=</span><span style="color: #ed9d13">&quot;</span><span style="color: #40ffff">$HOME</span><span style="color: #ed9d13">/Vagrant/LAMP/www/hogehoge&quot;</span>
+</pre></div></li>
+
+<li><p>バックアップ対象のディレクトリは当たり前だけど git 管理していることが前提</p></li>
+</ul>
+
+<h2 id="バックアップの実行">バックアップの実行</h2>
+
+<ol>
+<li><p>シェルを実行するだけ。実行すればありのままをコミットしてくれる</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>sh backup.sh
+</pre></div></li>
+</ol>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/git-commands/">
+                                Git コマンド覚え書
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        
+
+<h2 id="ローカルリポジトリの作成">ローカルリポジトリの作成</h2>
+
+<ul>
+<li>初期化して、現在あるファイルを追加して、コミットすればOK</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git init
+$ git add *
+$ git commit -m <span style="color: #ed9d13">&quot;initial commit&quot;</span>
+$ git push -u origin master <span style="color: #999999; font-style: italic"># -u で通遺跡ブランチ作成される</span>
+</pre></div>
+
+<h2 id="リモートリポジトリからプロジェクトをコピー">リモートリポジトリからプロジェクトをコピー</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git clone <span style="color: #d0d0d0">[</span>リモートリポジトリ名<span style="color: #d0d0d0">]</span>
+$ git clone -b <span style="color: #d0d0d0">[</span>ブランチ名<span style="color: #d0d0d0">]</span> <span style="color: #d0d0d0">[</span>リモートリポジトリ名<span style="color: #d0d0d0">]</span>
+</pre></div>
+
+<h3 id="ghq-の場合">ghq の場合</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ ghq add <span style="color: #d0d0d0">[</span>ベンダー名<span style="color: #d0d0d0">]</span>/<span style="color: #d0d0d0">[</span>リポジトリ名<span style="color: #d0d0d0">]</span>
+</pre></div>
+
+<h2 id="ファイル更新までの基本手順">ファイル更新までの基本手順</h2>
+
+<ul>
+<li>ざっくりは以下の様な流れ</li>
+</ul>
+
+<h3 id="新規ブランチの作成">新規ブランチの作成</h3>
+
+<ol>
+<li><code>git checkout -b new_branch</code> で新規ブランチ作成 &amp; ブランチ変更</li>
+</ol>
+
+<h3 id="ファイルの編集作業">ファイルの編集作業</h3>
+
+<ol>
+<li>エディタでファイルの編集</li>
+<li><code>git status</code> と <code>git diff</code> で状態/変更点を確認</li>
+<li>必要なファイルをインデックスへ追加（<code>git add</code>）<br />
+→ <code>git add</code> を取り消す場合は、<code>git reset</code><br />
+→ <code>add</code> 済みの <code>diff</code> は <code>diff --cached</code></li>
+<li>コミット（<code>git commit</code>）</li>
+<li>→ <code>git commit</code> を取り消す場合は、<code>git reset --soft HEAD^</code></li>
+<li>リモートリポジトリへ反映（<code>git push origin &lt;ブランチ名&gt;</code>）</li>
+</ol>
+
+<h3 id="ブランチの派生元-ここでは-dev-とする-へ反映">ブランチの派生元（ここでは <code>dev</code> とする）へ反映</h3>
+
+<ol>
+<li><code>git checkout dev</code> で派生元へ移動</li>
+<li><code>git merge --no-ff new_branch</code> で派生元へ反映</li>
+<li><code>git push origin dev</code> で派生元ブランチをリモートブランチへ反映させる</li>
+</ol>
+
+<h3 id="後処理">後処理</h3>
+
+<ol>
+<li><code>git branch -d new_branch</code> でブランチ削除</li>
+</ol>
+
+<h2 id="初期設定">初期設定</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ <span style="color: #24909d">cd</span> &lt;git 管理したいディレクトリ&gt;
+$ git init
+</pre></div>
+
+<p>以上</p>
+
+<p>// git の正当性をチェックする</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git fsck
+$ git fsck --full
+</pre></div>
+
+<p>// 不要なオブジェクト削除&amp;最適化</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git gc
+</pre></div>
+
+<h2 id="状態の確認">状態の確認</h2>
+
+<h3 id="インデックスとワーキングツリーの状況">インデックスとワーキングツリーの状況</h3>
+
+<pre><code>$ git status
+$ git status -s
+</code></pre>
+
+<h3 id="コミットログの表示">コミットログの表示</h3>
+
+<ul>
+<li><code>git log</code> は新しいコミットが上に表示される</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># コミットログを表示</span>
+$ git log
+
+<span style="color: #999999; font-style: italic"># コミットログに変更内容を追加して表示</span>
+$ git log -p
+
+<span style="color: #999999; font-style: italic"># コミットログにそれぞれの変更内容（diff）を追加して表示しつつ、最新の3件のみ表示</span>
+$ git log -p -3
+
+<span style="color: #999999; font-style: italic"># コミットの統計情報を見る</span>
+$ git log --stat
+
+<span style="color: #999999; font-style: italic"># コミットログを1行で表示</span>
+$ git log --pretty<span style="color: #d0d0d0">=</span>oneline
+
+<span style="color: #999999; font-style: italic"># 過去2週間以内のコミットログのみ表示</span>
+$ git log --since<span style="color: #d0d0d0">=</span><span style="color: #3677a9">2</span>.weeks
+
+<span style="color: #999999; font-style: italic"># おすすめオプション</span>
+</pre></div>
+
+<ul>
+<li><code>git log</code> //コミットのログが見られる</li>
+<li><code>git reflog</code> //HEAD のログが見られる</li>
+<li><code>git reflog origin/branch_name</code> //pushのログが見れる</li>
+<li>ログには色々なオプションがあるけど、おすすめは以下のコマンド。</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git log --graph --name-status --pretty<span style="color: #d0d0d0">=</span>format:<span style="color: #ed9d13">&quot;%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset&quot;</span>
+</pre></div>
+
+<h2 id="git-diff">git diff</h2>
+
+<h3 id="インデックスに-add-していないモノを表示">インデックスに add していないモノを表示</h3>
+
+<ul>
+<li>インデックスとワーキングツリーの差分</li>
+
+<li><p>新規に作成されたファイルは Git に track されていないので、新規に作成したファイルはこのコマンドでは表示されない。</p>
+
+<pre><code>$ git diff
+</code></pre></li>
+</ul>
+
+<h3 id="インデックスに-add-したモノを表示">インデックスに add したモノを表示</h3>
+
+<ul>
+<li>HEADとインデックスの差分</li>
+
+<li><p>コミット直前に良く使う</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git diff --cache
+$ git diff --staged
+</pre></div></li>
+</ul>
+
+<h3 id="直前のコミットによる変更を表示">直前のコミットによる変更を表示</h3>
+
+<ul>
+<li>HEAD と HEAD^ の差分</li>
+
+<li><p>コミット直後に良く使う</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git diff HEAD^ HEAD
+</pre></div></li>
+
+<li><p><code>--stat</code> オプションをつけると統計情報のみを表示</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git diff HEAD^ HEAD --stat
+</pre></div></li>
+</ul>
+
+<h3 id="headとワーキングツリーの差分">HEADとワーキングツリーの差分</h3>
+
+<ul>
+<li><p>ほとんど使うことはない</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git diff HEAD
+</pre></div></li>
+
+<li><p>diff に &ndash;color-words を付けると単語単位で色が付く</p></li>
+</ul>
+
+<h2 id="ワーキングツリーの操作">ワーキングツリーの操作</h2>
+
+<h3 id="編集前の状態に戻す">編集前の状態に戻す</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># 直前のコミットの内容に戻す</span>
+$ git checkout &lt;ファイル名&gt;
+
+<span style="color: #999999; font-style: italic"># 任意のコミットの内容に戻す</span>
+$ git checkout &lt;コミットID&gt; &lt;ファイル名&gt;
+</pre></div></li>
+</ul>
+
+<h3 id="ファイルの名前変更">ファイルの名前変更</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git mv <span style="color: #d0d0d0">[</span>変更前のファイル名<span style="color: #d0d0d0">]</span> <span style="color: #d0d0d0">[</span>変更後のファイル名<span style="color: #d0d0d0">]</span>
+$ git commit -a -m <span style="color: #ed9d13">&quot;rename&quot;</span>
+$ git push origin master
+</pre></div></li>
+</ul>
+
+<h4 id="ファイルの削除-git-管理対象外にする">ファイルの削除（Git 管理対象外にする）</h4>
+
+<ul>
+<li>Git 管理から外す（削除する）</li>
+
+<li><p>コミットを実行した時に、ワーキングツリー（PC） からファイルが削除される</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git rm &lt;ファイル名&gt;
+</pre></div></li>
+
+<li><p>Git 追跡対象外にしつつ、ワーキングツリー（PC）にファイルを残したい場合は、</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git rm --cached &lt;ファイル名&gt;
+</pre></div></li>
+</ul>
+
+<h3 id="特定のモノをインデックスへ追加">特定のモノをインデックスへ追加</h3>
+
+<ul>
+<li>スペース区切りで複数ファイル追加 OK</li>
+<li>ワイルドカード使える　（例）$ git add *.css</li>
+
+<li><p>ディレクトリ指定も可能</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git add ＜ファイル名＞
+</pre></div></li>
+</ul>
+
+<h3 id="新規作成-変更-削除されたモノを全てインデックスへ追加">新規作成/変更/削除されたモノを全てインデックスへ追加</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git add -A
+</pre></div></li>
+</ul>
+
+<h3 id="変更-削除されたモノのみをインデックスへ追加-新規作成は対象外">変更/削除されたモノのみをインデックスへ追加（新規作成は対象外）</h3>
+
+<ul>
+<li><pre><code>$ git add -u
+</code></pre></li>
+</ul>
+
+<h4 id="新規作成-変更されたモノをインデックスへ追加-削除は対象外">新規作成/変更されたモノをインデックスへ追加（削除は対象外）</h4>
+
+<ul>
+<li><pre><code>git add .
+</code></pre></li>
+</ul>
+
+<h2 id="インデックス-ステージ-の操作">インデックス(ステージ)の操作</h2>
+
+<h3 id="add-したモノを全て元に戻す">add したモノを全て元に戻す</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset
+</pre></div></li>
+</ul>
+
+<h3 id="add-した特定のモノを元に戻す">add した特定のモノを元に戻す</h3>
+
+<ul>
+<li><p>スペース区切りで複数指定可能</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset &lt;ファイル名&gt;
+</pre></div></li>
+</ul>
+
+<h2 id="git-push">git push</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># ステージングの内容をリモートレポジトリへ反映</span>
+$ git push origin dev
+
+<span style="color: #999999; font-style: italic"># ステージングの内容をリモートレポジトリへ反映し追跡ブランチを作成</span>
+$ git push -u origin dev
+</pre></div>
+
+<h2 id="git-reset">git reset</h2>
+
+<h3 id="head-とインデックスを-場所-へ移動する-commit-と-add-の取り消し">HEAD とインデックスを&lt;場所&gt;へ移動する（commit と add の取り消し）</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset &lt;場所&gt;
+</pre></div>
+
+<p>例）HEAD とインデックスを最終のコミット位置に戻す場合</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset HEAD^
+</pre></div></li>
+</ul>
+
+<h3 id="head-のみを-場所-へ移動する-commit-のみ取り消し">HEAD のみを&lt;場所&gt;へ移動する（commit のみ取り消し）</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset --soft &lt;場所&gt;
+</pre></div></li>
+</ul>
+
+<h3 id="head-インデックス-ワーキングツリー全てを-場所-へ移動する">HEAD, インデックス, ワーキングツリー全てを&lt;場所&gt;へ移動する</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset --hard &lt;場所&gt;
+</pre></div></li>
+</ul>
+
+<h3 id="場所-の指定方法">&lt;場所&gt;の指定方法</h3>
+
+<ul>
+<li><code>HEAD</code> 今いるブランチのコミットの先頭</li>
+<li><code>HEAD^</code> 最終コミット（直前のコミット）</li>
+<li><code>HEAD~</code> 最終コミット（直前のコミット）</li>
+<li><code>@^</code> 最終コミット（直前のコミット）</li>
+<li><code>@~</code> 最終コミット（直前のコミット）</li>
+<li><code>HEAD~2</code> 最終コミットの二つ前</li>
+</ul>
+
+<blockquote>
+<p>HEAD^：直前のコミットを意味する。<br />
+@^、HEAD~も同じ意味。<br />
+HEAD~{n} ：n個前のコミットを意味する。<br />
+HEAD^やHEAD~{n}の代わりにコミットのハッシュ値を書いても良い。<br />
+gitのv1.8.5からは、「HEAD」のエイリアスとして「＠」が用意されている。<br />
+HEAD^^^とHEAD~3とHEAD~~~とHEAD~{3}と@^^^は同じ意味。<br />
+&ndash;softなので、インデックス・ワーキングツリーはそのまま。<br />
+上書きコミットしたいなら、git commit &ndash;amendを使うとラク！</p>
+</blockquote>
+
+<p>出所：<a href="http://qiita.com/shuntaro_tamura/items/db1aef9cf9d78db50ffe">[git reset (&ndash;hard/&ndash;soft)]ワーキングツリー、インデックス、HEADを使いこなす方法 - Qiita</a></p>
+
+<h3 id="reset-を取り消す">reset を取り消す</h3>
+
+<ul>
+<li><code>ORIG_HEAD reset</code> を実行した直前のコミット</li>
+<li><code>ORIG_HEAD</code> を使えば <code>reset</code> 前の状態に戻ることができる</li>
+<li><code>ORIG_HEAD</code> は <code>reset</code> を実行する前の HEAD の位置</li>
+<li><code>FETCH_HEAD</code> は <code>git fetch</code> したコミットの先頭</li>
+</ul>
+
+<h3 id="reset-と-revert-の違い">reset と revert の違い</h3>
+
+<ul>
+<li><code>reset</code> は、履歴が消える（原則、元に戻せない）</li>
+<li><code>revert</code> は、履歴が残る</li>
+</ul>
+
+<h3 id="reset-しても-git-reflog-で元に戻す方法">reset しても git reflog で元に戻す方法</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset --hard HEAD^^ <span style="color: #999999; font-style: italic"># HEAD^と指定するつもりが間違えた!</span>
+$ git reflog
+f5cb888 HEAD@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">0</span><span style="color: #d0d0d0">}</span>: head^^: updating HEAD
+b0b8073 HEAD@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">}</span>: merge @<span style="color: #d0d0d0">{</span>-1<span style="color: #d0d0d0">}</span>: Merge made by the <span style="color: #ed9d13">&#39;recursive&#39;</span> strategy.
+fe3972d HEAD@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">2</span><span style="color: #d0d0d0">}</span>: checkout: moving from fix/some-bug to master
+$ git reset --hard HEAD@<span style="color: #d0d0d0">{</span><span style="color: #3677a9">1</span><span style="color: #d0d0d0">}</span> <span style="color: #999999; font-style: italic"># reset --hard HEAD^^する前に戻れる</span>
+</pre></div>
+
+<p>参考： <a href="http://qiita.com/yaotti/items/e37c707938847aee671b">いざという時のためのgit reflog - Qiita</a></p></li>
+</ul>
+
+<h2 id="commit-コミットの操作">commit（コミットの操作）</h2>
+
+<h3 id="コミットする">コミットする</h3>
+
+<ul>
+<li><p>コマンドを実行すると <code>$EDITOR</code> で指定したエディタが起動するので、最上段の空白行にコメントを入力して、エディタを終了するとコミットされる。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git commit
+または
+$ git commit -v <span style="color: #999999; font-style: italic"># ← diff の内容も表示する</span>
+</pre></div></li>
+
+<li><p>環境変数 <code>EDITOR</code> の指定方法。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #24909d">export</span> <span style="color: #40ffff">EDITOR</span><span style="color: #d0d0d0">=</span>vim
+</pre></div></li>
+
+<li><p>コミットメッセージをインラインで指定する</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git commit -m <span style="color: #ed9d13">&quot;&lt;コメント&gt;&quot;</span>
+</pre></div></li>
+</ul>
+
+<h3 id="直前のコミットを上書きしてコミット">直前のコミットを上書きしてコミット</h3>
+
+<ul>
+<li>直前のコミットを作り直す</li>
+
+<li><p><code>git commit</code> した後に、<code>git add</code> などでインデックスを変更したのち、<code>git commit --amend</code> を実行する</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git commit --amend
+</pre></div></li>
+
+<li><p><code>git commit</code> した後に、そのコミットのコメントだけを変更する場合は、<code>git add</code> など何もせずに、<code>git commit --amend</code> を実行する</p></li>
+</ul>
+
+<h3 id="コミットの取り消し">コミットの取り消し</h3>
+
+<ul>
+<li><div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git reset --soft HEAD^    // ワークディレクトリはそのまま
+$ git reset --hard HEAD^    // ワークディレクトリも元に戻す
+</pre></div>
+
+<ul>
+<li>HEAD^ 直前</li>
+<li>HEAD~2    // 2つ前</li>
+<li>HEAD~3    // 3つ前</li>
+</ul></li>
+</ul>
+
+<h3 id="コミットメッセージ">コミットメッセージ</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># 書式</span>
+<span style="color: #d0d0d0">[</span>Prefix<span style="color: #d0d0d0">]</span> commit message
+</pre></div>
+
+<h4 id="prefix-仕様関連">Prefix（仕様関連）</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Prefix</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">仕様変更</td>
+<td align="left">Change</td>
+</tr>
+
+<tr>
+<td align="left">バージョンアップ</td>
+<td align="left">Upgrade</td>
+</tr>
+
+<tr>
+<td align="left">設定追加</td>
+<td align="left">Set</td>
+</tr>
+
+<tr>
+<td align="left">設定削除</td>
+<td align="left">Unset</td>
+</tr>
+
+<tr>
+<td align="left">設定の有効化</td>
+<td align="left">Enable</td>
+</tr>
+
+<tr>
+<td align="left">設定の無効化</td>
+<td align="left">Disable</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="prefix-機能追加-拡張-向上に関するもの">Prefix（機能追加/拡張/向上に関するもの）</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Prefix</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">新規機能追加</td>
+<td align="left">New (Add)</td>
+</tr>
+
+<tr>
+<td align="left">機能拡張</td>
+<td align="left">Extend</td>
+</tr>
+
+<tr>
+<td align="left">機能向上</td>
+<td align="left">Improve</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="prefix-メンテナンス関連">Prefix（メンテナンス関連）</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Prefix</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">バグ修正</td>
+<td align="left">Fix</td>
+</tr>
+
+<tr>
+<td align="left">整理</td>
+<td align="left">Clean</td>
+</tr>
+
+<tr>
+<td align="left">削除</td>
+<td align="left">Remove</td>
+</tr>
+
+<tr>
+<td align="left">変更を取り消し</td>
+<td align="left">Revert</td>
+</tr>
+
+<tr>
+<td align="left">とりあえず保存したい時</td>
+<td align="left">Bk</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="prefix-その他">Prefix（その他）</h4>
+
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="left">Prefix</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">修正</td>
+<td align="left">Modify</td>
+</tr>
+
+<tr>
+<td align="left">回避</td>
+<td align="left">Avoid</td>
+</tr>
+
+<tr>
+<td align="left">更新</td>
+<td align="left">Update</td>
+</tr>
+
+<tr>
+<td align="left">最適化</td>
+<td align="left">Optimize</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="例-bk">例）Bk</h4>
+
+<ul>
+<li>[Bk] WIP</li>
+<li>[Bk] work in progress</li>
+</ul>
+
+<h4 id="例-clean">例）Clean</h4>
+
+<ul>
+<li>[Clean] cosmetic change</li>
+</ul>
+
+<h4 id="例-add">例）Add</h4>
+
+<ul>
+<li>[Add] support for bridgeless SLI with GeForce 8 GPUs.</li>
+<li>[Add] New 3D buttons (新しい３Dボタン (を追加しました))</li>
+<li>[Add] New session management, saving up to 3 queries per request.</li>
+<li>[Add] Provide more helpful features</li>
+<li>[Add] Allow &ldquo;\n&rdquo; at the end of line</li>
+</ul>
+
+<h4 id="例-change">例）Change</h4>
+
+<ul>
+<li>[Changed] A to B (BできるようにAを変えました)</li>
+<li>[Changed] Minor changes in A (Aにて，小さな変更を行いました)</li>
+<li>[Changed] Major changes in A (Aにて，大きな変更を行いました)</li>
+</ul>
+
+<h4 id="例-fix">例）Fix</h4>
+
+<ul>
+<li>[Fix] Fixed a performance regression. （パフォーマンスが低下するバグを修正しました）</li>
+<li>[Fix] possible memory leak</li>
+<li>[Fix] possible AAA attack against BBB</li>
+<li>[Fix] stability problems with GeForce 8 GPU. (GeForce 8 GPUで動作が不安定になる問題を修正しました)</li>
+<li>[Fix] an &ldquo;AAA&rdquo; bug that was causing the B to C. (BがCしちゃう，いわゆるAAAバグを修正しました)</li>
+<li>[Fix] missing A in B() (関数B内でAが抜けていた不具合を修正しました)</li>
+<li>[Fix] This fixes a regression for ～</li>
+<li>[Fix] This fixes the following bug reported by A. (Aさんが報告してくれた以下の不具合を修正しました)</li>
+<li>[Fix] Various fixes to the install wizard.</li>
+<li>[Fix] Some fixes to make installer work.</li>
+</ul>
+
+<h3 id="例-revert">例）Revert</h3>
+
+<ul>
+<li>[Revert] Reverted SVN rev #396294 due to unwanted regression.(バグがあったので,svnのリビジョン396294に巻き戻しました)</li>
+<li>[Revert] Avoid possible crashes on A　（時々クラッシュするバグを回避するように修正しました）</li>
+<li>[Revert] Avoid segfault on A</li>
+<li>[Revert] Don&rsquo;t crash on A</li>
+<li>[Revert] Removed obsolete username_max_length.</li>
+<li>[Revert] Don&rsquo;t use Location header on IIS</li>
+<li>[Revert] this problem has been fixed この問題は修正済です．</li>
+<li>[Revert] this problem will be fixed shortly この問題は近々修正されます．</li>
+<li>[Revert] We recommend that you upgrade your XXX. アップグレードすることをお勧めします．</li>
+</ul>
+
+<h2 id="タグ">タグ</h2>
+
+<h3 id="タグ追加">タグ追加</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git tag -a <span style="color: #3677a9">1</span>.0.0 -m <span style="color: #ed9d13">&quot;&lt;コメント&gt;&quot;</span>
+
+<span style="color: #999999; font-style: italic"># 過去に遡ってタグをつける</span>
+$ git tag <span style="color: #3677a9">1</span>.0.0 &lt;sha1&gt;
+</pre></div>
+
+<h3 id="タグ一覧">タグ一覧</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git tag
+</pre></div>
+
+<h3 id="特定のタグにチェックアウト">特定のタグにチェックアウト</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git checkout refs/tags/2.4.6
+</pre></div>
+
+<h3 id="対象タグのコミットを表示">対象タグのコミットを表示</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git tag show <span style="color: #3677a9">1</span>.0.0
+</pre></div>
+
+<h3 id="タグ削除">タグ削除</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git tag -d <span style="color: #3677a9">1</span>.0.0
+</pre></div>
+
+<h3 id="タグをリモートへプッシュ">タグをリモートへプッシュ</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># タグを指定する</span>
+$ git push origin <span style="color: #3677a9">1</span>.0.0
+
+<span style="color: #999999; font-style: italic"># push していないタグを全てプッシュ</span>
+$ git push origin --tags
+</pre></div>
+
+<p>＜リモートのタグを削除＞</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git push origin :refs/tags/v1.0.0
+</pre></div>
+
+<h2 id="ローカルブランチの操作">ローカルブランチの操作</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># ローカルブランチの一覧</span>
+$ git branch
+
+<span style="color: #999999; font-style: italic"># リモートとローカルのブランチの一覧</span>
+$ git branch -a
+
+<span style="color: #999999; font-style: italic"># 現在のブランチから新規ブランチを派生させる</span>
+$ git branch <span style="color: #d0d0d0">[</span>branch_name<span style="color: #d0d0d0">]</span>
+
+<span style="color: #999999; font-style: italic"># 現在のブランチから新規ローカルブランチを派生して、そのブランチへ移動（リモートブランチがない場合に使う）</span>
+$ git checkout -b &lt;ブランチ名&gt;
+
+<span style="color: #999999; font-style: italic"># 現在のブランチから追跡ブランチと新規ローカルブランチを派生して、そのブランチへ移動（リモートブランチにはあって、ローカルブランチがない場合に使う）</span>
+$ git checkout -b ios8 origin/ios8
+
+<span style="color: #999999; font-style: italic"># 別のブランチに移動</span>
+$ git checkout <span style="color: #d0d0d0">[</span>branch_name<span style="color: #d0d0d0">]</span>
+
+<span style="color: #999999; font-style: italic"># ブランチの削除</span>
+$ git branch -d <span style="color: #d0d0d0">[</span>branch_name<span style="color: #d0d0d0">]</span>
+
+<span style="color: #999999; font-style: italic"># 現在のブランチ名の変更(変更したいブランチに切り替えた上で実行)</span>
+$ git branch -m <span style="color: #d0d0d0">[</span>new_branch_name<span style="color: #d0d0d0">]</span>
+</pre></div>
+
+<h2 id="リモートブランチの操作">リモートブランチの操作</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># 追跡ブランチの一覧</span>
+$ git branch -r
+
+<span style="color: #999999; font-style: italic"># 追跡ブランチとローカルのブランチの一覧</span>
+$ git branch -a
+</pre></div>
+
+<h3 id="リモートブランチの削除-ローカルブランチも削除">リモートブランチの削除（ローカルブランチも削除）</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># ローカルブランチを削除</span>
+$ git branch -d &lt;削除するブランチ名&gt;
+
+<span style="color: #999999; font-style: italic"># リモートブランチを削除</span>
+$ git push origin :&lt;削除するブランチ名&gt;
+
+<span style="color: #999999; font-style: italic"># 例: dev ローカル &amp; リモートブランチを削除）</span>
+$ git branch -d dev
+$ git push origin :dev
+</pre></div>
+
+<h3 id="リモートブランチの削除-ローカルブランチは残す">リモートブランチの削除（ローカルブランチは残す）</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git push --delete origin &lt;削除するブランチ名&gt;
+</pre></div>
+
+<h2 id="merge-別ブランチの内容を反映">merge（別ブランチの内容を反映）</h2>
+
+<p><code>master</code> 以外のブランチで編集した箇所を <code>master</code> に反映させる</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># master ブランチへ移動</span>
+$ git checkout master
+
+<span style="color: #999999; font-style: italic"># 差分をマージ</span>
+$ git merge <span style="color: #d0d0d0">[</span>branch_name<span style="color: #d0d0d0">]</span>
+
+<span style="color: #999999; font-style: italic"># 差分をマージ（ファーストフォワードマージしない）</span>
+$ git merge --no-ff <span style="color: #d0d0d0">[</span>branch_name<span style="color: #d0d0d0">]</span>
+
+<span style="color: #999999; font-style: italic"># リモートリポジトリへ反映</span>
+$ git push origin master
+</pre></div>
+
+<h2 id="リモートレポジトリの設定">リモートレポジトリの設定</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># リモートリポジトリの一覧を表示</span>
+git remote -v
+
+<span style="color: #999999; font-style: italic"># リモートリポジトリ名（ショートネーム）の一覧を表示</span>
+$ git remote
+
+<span style="color: #999999; font-style: italic"># 接続するリモートリポジトリを追加</span>
+<span style="color: #999999; font-style: italic"># 例） git remote add master https://github.com/ontheroadjp/arch-madsonic.git</span>
+$ git remote add &lt;shortname&gt; &lt;url&gt;
+
+<span style="color: #999999; font-style: italic"># 接続するリモートリポジトリを追加(その2)</span>
+<span style="color: #999999; font-style: italic"># 例） git remote add master https://ユーザー名@github.com/ontheroadjp/arch-madsonic.git</span>
+$ git remote add &lt;shortname&gt; &lt;url&gt;
+
+<span style="color: #999999; font-style: italic"># 接続しているリモートリポジトリを解除</span>
+<span style="color: #999999; font-style: italic"># 例） git remote rm origin</span>
+$ git remote rm &lt;shortname&gt;
+
+<span style="color: #999999; font-style: italic"># リモートリポジトリの情報を表示</span>
+<span style="color: #999999; font-style: italic"># 例）git remote show origin</span>
+$ git remote show &lt;shortname&gt;
+
+<span style="color: #999999; font-style: italic"># ローカルの追跡ブランチの情報を更新（リモートブランチの情報と同期）</span>
+git remote update -p
+
+<span style="color: #999999; font-style: italic"># リモートリポジトリの URL 変更</span>
+<span style="color: #999999; font-style: italic"># 例） $ git remote set-url origin https://github.com/ontheroadjp/laravel5_bbc.git</span>
+$ git remote set-url <span style="color: #d0d0d0">[</span>shortname<span style="color: #d0d0d0">]</span> <span style="color: #d0d0d0">[</span>url<span style="color: #d0d0d0">]</span>
+</pre></div>
+
+<h2 id="stash-今やってる作業を一時退避する">stash（今やってる作業を一時退避する）</h2>
+
+<h3 id="スタッシュに保存">スタッシュに保存</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ git stash
+$ git stash save
+
+<span style="color: #999999; font-style: italic"># メッセージをつけてスタッシュ</span>
+$ git stash save <span style="color: #ed9d13">&quot;message&quot;</span>
+
+<span style="color: #999999; font-style: italic"># unstage ファイルを全てスタッシュ</span>
+$ git stash -k
+
+<span style="color: #999999; font-style: italic"># untrackファイルも含めて全てスタッシュ</span>
+$ git stash -u
+</pre></div>
+
+<h3 id="スタッシュの適用">スタッシュの適用</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># 直近のスタッシュを適用して削除</span>
+$ git stash pop 
+
+<span style="color: #999999; font-style: italic"># N 番目のスタッシュを適用して削除</span>
+$ git stash pop stash@<span style="color: #d0d0d0">{</span>N<span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<h3 id="スタッシュの一覧">スタッシュの一覧</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># スタッシュの一覧</span>
+$ git stash list
+</pre></div>
+
+<h3 id="スタッシュの内容を確認する">スタッシュの内容を確認する</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># N番目にスタッシュしたファイルの一覧を表示</span>
+$ git stash show stash@<span style="color: #d0d0d0">{</span>N<span style="color: #d0d0d0">}</span>
+
+<span style="color: #999999; font-style: italic"># N番目にスタッシュしたファイルの変更差分を表示</span>
+$ git stash show -p stash@<span style="color: #d0d0d0">{</span>N<span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<h3 id="スタッシュの削除">スタッシュの削除</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># 最新のスタッシュを消去</span>
+$ git stash drop
+
+<span style="color: #999999; font-style: italic"># N 番目のスタッシュの消去</span>
+$ git stash drop stash@<span style="color: #d0d0d0">{</span>N<span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<h2 id="rebase-i-過去のコミットメッセージを書き換える">rebase -i（過去のコミットメッセージを書き換える）</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git rebase -i HEAD~3
+</pre></div>
+
+<p><code>pick</code> を <code>e</code> へ変更</p>
+
+<p><code>git commit --amend</code></p>
+
+<p><code>git rebase --continue</code></p>
+
+<p><code>git push -f origin dev</code></p>
+
+<h2 id="rebase-i-コミットをまとめる">rebase -i（コミットをまとめる）</h2>
+
+<pre><code>git rebase -i HEAD~4
+</code></pre>
+
+<ul>
+<li><code>HEAD~2</code> で直近のコミット含めて2つのコミットを rebase 対象とする</li>
+<li><code>HEAD~3</code> で直近のコミット含めて3つのコミットを rebase 対象とする</li>
+<li><code>HEAD~4</code> で直近のコミット含めて4つのコミットを rebase 対象とする</li>
+<li><code>HEAD~5</code> で直近のコミット含めて5つのコミットを rebase 対象とする</li>
+</ul>
+
+<p>以下同</p>
+
+<p>rebase 中に訳が分からなくなったら <code>git rebase --abort</code> で一旦、rebase 処理をキャンセルして初めからやり直す。</p>
+
+<p>rebase を覚えると、何でもかんでも <code>git commit -m '[BK] wip</code> などでバックアップ代わりにコミットしまくって最後に rebase で一つのコミットにまとめる、などが出来るようになる。</p>
+
+<h3 id="例-直近のコミットを含めて4つのコミットを1つにまとめる場合">例）直近のコミットを含めて4つのコミットを1つにまとめる場合</h3>
+
+<p>コミットログが以下の場合、</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>b78e6e5  <span style="color: #d0d0d0">(</span>HEAD -&gt; dev, origin/dev<span style="color: #d0d0d0">)</span> <span style="color: #3677a9">2017</span>-02-06 @ontheroad_jp rebase
+1cc451a  <span style="color: #3677a9">2017</span>-02-06 @ontheroad_jp <span style="color: #d0d0d0">[</span>Refactor<span style="color: #d0d0d0">]</span> change variable names event to item
+4e3bdc5  <span style="color: #3677a9">2017</span>-02-06 @ontheroad_jp <span style="color: #d0d0d0">[</span>New<span style="color: #d0d0d0">]</span> ajax loading icon <span style="color: #6ab825; font-weight: bold">for</span> the fetch calendar
+aba97c3  <span style="color: #3677a9">2017</span>-02-05 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> table column fix
+ca0cae3  <span style="color: #3677a9">2017</span>-02-04 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> Item DnD
+70b6ffe  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span>
+06b03d9  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>Add<span style="color: #d0d0d0">]</span> model <span style="color: #24909d">test</span>
+80eec5a  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Refactor<span style="color: #d0d0d0">]</span>
+111cba5  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Change<span style="color: #d0d0d0">]</span> membersApi to store.index.js
+</pre></div>
+
+<h4 id="1-git-rebase-i-head-4-する">1. <code>git rebase -i HEAD^4</code> する</h4>
+
+<p>エディタが起動して、以下の通り表示される。古い順に表示されるので最新のコミットが最下段。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>pick aba97c3 <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> table column fix
+pick 4e3bdc5 <span style="color: #d0d0d0">[</span>New<span style="color: #d0d0d0">]</span> ajax loading icon <span style="color: #6ab825; font-weight: bold">for</span> the fetch calendar
+pick 1cc451a <span style="color: #d0d0d0">[</span>Refactor<span style="color: #d0d0d0">]</span> change variable names event to item
+pick b78e6e5 rebase
+</pre></div>
+
+<h4 id="2-まとめたいコミットの-pick-を-s-へ変更する">2. まとめたいコミットの <code>pick</code> を <code>s</code> へ変更する</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>pick aba97c3 <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> table column fix
+s 4e3bdc5 <span style="color: #d0d0d0">[</span>New<span style="color: #d0d0d0">]</span> ajax loading icon <span style="color: #6ab825; font-weight: bold">for</span> the fetch calendar
+s 1cc451a <span style="color: #d0d0d0">[</span>Refactor<span style="color: #d0d0d0">]</span> change variable names event to item
+s b78e6e5 rebase
+</pre></div>
+
+<p><code>s(squash)</code> の意味は、直前のコミットに吸収させる。なのでこの場合は、</p>
+
+<p>最新のコミット(<code>b78e6e5</code>) は 2つ前のコミット(<code>1cc451a</code>)へ<br />
+2つ前のコミット(<code>1cc451a</code>)は 3つ前のコミット(<code>4e3bdc5</code>)へ<br />
+3つ前のコミット(<code>4e3bdc5</code>)は 4つ前のコミット(<code>aba97c3</code>)へ</p>
+
+<p>それぞれ吸収され、結果、4つのコミットが一つのコミットになる。<code>s</code> へ変更ごエディタを閉じる。</p>
+
+<p><strong>注意</strong></p>
+
+<p>最上段のコミット（対象コミットの中で一番古いコミット：<code>aba97c3</code>) を <code>s</code> すると面倒くさいことになる。間違えて <code>s</code> してエディタを閉じた場合は、<code>git rebase --abort</code> で一旦 rebase をキャンセルして最初からやり直す。</p>
+
+<p>ちなみに最上段のコミット（この場合は4つ前のコミット）を <code>s</code> した場合、<code>git rebase -i HEAD^5</code> で始める。</p>
+
+<p>エディタを閉じてから <code>git log</code> するとこんな感じ。最上段の(<code>109eac6</code>)が ４つをまとめたコミット</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #d0d0d0">* 109eac6  (HEAD -&gt; dev) 2017-02-05 @ontheroad_jp [WIP] table column fix</span>
+<span style="color: #d0d0d0">| * b78e6e5  (origin/dev) 2017-02-06 @ontheroad_jp rebase</span>
+<span style="color: #d0d0d0">| * 1cc451a  2017-02-06 @ontheroad_jp [Refactor] change variable names event to item</span>
+<span style="color: #d0d0d0">| * 4e3bdc5  2017-02-06 @ontheroad_jp [New] ajax loading icon for the fetch calendar</span>
+<span style="color: #d0d0d0">| * aba97c3  2017-02-05 @ontheroad_jp [WIP] table column fix</span>
+<span style="color: #d0d0d0">|/</span>
+<span style="color: #d0d0d0">* ca0cae3  2017-02-04 @ontheroad_jp [WIP] Item DnD</span>
+<span style="color: #d0d0d0">* 70b6ffe  2017-02-03 @ontheroad_jp [WIP]</span>
+<span style="color: #d0d0d0">* 06b03d9  2017-02-03 @ontheroad_jp [Add] model test</span>
+<span style="color: #d0d0d0">* 80eec5a  2017-01-23 @ontheroad_jp [Refactor]</span>
+<span style="color: #d0d0d0">* 111cba5  2017-01-23 @ontheroad_jp [Change] membersApi to store.index.js</span>
+<span style="color: #d0d0d0">* c026753  2017-01-23 @ontheroad_jp [change] vue-resource to axios</span>
+</pre></div>
+
+<p>まとまったコミット(<code>109eac6</code>)のコミットメッセージはまとめ先（この場合は4つ前のコミット）のコミットメッセージになる。</p>
+
+<h4 id="3-git-push-f-する">3. <code>git push -f</code> する</h4>
+
+<p><code>git push -f origin ＜ブランチ名＞</code> すると 4つのコミットがなくなり、まとめたコミットのみが残る。</p>
+
+<p><code>git push -f</code> 後の git ログ。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>109eac6  <span style="color: #d0d0d0">(</span>HEAD -&gt; dev, origin/dev<span style="color: #d0d0d0">)</span> <span style="color: #3677a9">2017</span>-02-05 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> table column fix
+ca0cae3  <span style="color: #3677a9">2017</span>-02-04 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> Item DnD
+70b6ffe  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span>
+06b03d9  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>Add<span style="color: #d0d0d0">]</span> model <span style="color: #24909d">test</span>
+80eec5a  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Refactor<span style="color: #d0d0d0">]</span>
+111cba5  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Change<span style="color: #d0d0d0">]</span> membersApi to store.index.js
+</pre></div>
+
+<h4 id="4-必要に応じて-コミットメッセージの変更">4（必要に応じて） コミットメッセージの変更</h4>
+
+<p><code>git push -f</code> した後に、<code>git commit -m 'Rebase' --amend</code> すると</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>* 50600d4  <span style="color: #d0d0d0">(</span>HEAD -&gt; dev<span style="color: #d0d0d0">)</span> <span style="color: #3677a9">2017</span>-02-05 @ontheroad_jp rebase
+<span style="color: #d0d0d0">|</span> * 109eac6  <span style="color: #d0d0d0">(</span>origin/dev<span style="color: #d0d0d0">)</span> <span style="color: #3677a9">2017</span>-02-05 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> table column fix
+<span style="color: #d0d0d0">|</span>/
+* ca0cae3  <span style="color: #3677a9">2017</span>-02-04 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> Item DnD
+* 70b6ffe  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span>
+* 06b03d9  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>Add<span style="color: #d0d0d0">]</span> model <span style="color: #24909d">test</span>
+* 80eec5a  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Refactor<span style="color: #d0d0d0">]</span>
+* 111cba5  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Change<span style="color: #d0d0d0">]</span> membersApi to store.index.js
+</pre></div>
+
+<p>になるので、再度 <code>git push -f</code> すると、</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>50600d4  <span style="color: #d0d0d0">(</span>HEAD -&gt; dev, origin/dev<span style="color: #d0d0d0">)</span> <span style="color: #3677a9">2017</span>-02-05 @ontheroad_jp rebase
+ca0cae3  <span style="color: #3677a9">2017</span>-02-04 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span> Item DnD
+70b6ffe  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>WIP<span style="color: #d0d0d0">]</span>
+06b03d9  <span style="color: #3677a9">2017</span>-02-03 @ontheroad_jp <span style="color: #d0d0d0">[</span>Add<span style="color: #d0d0d0">]</span> model <span style="color: #24909d">test</span>
+80eec5a  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Refactor<span style="color: #d0d0d0">]</span>
+111cba5  <span style="color: #3677a9">2017</span>-01-23 @ontheroad_jp <span style="color: #d0d0d0">[</span>Change<span style="color: #d0d0d0">]</span> membersApi to store.index.js
+</pre></div>
+
+<p>コミットメッセージが変更される。</p>
+
+<h2 id="gitignore">.gitignore</h2>
+
+<ul>
+<li>すでに git 管理下にある場合は、<code>git rm --cached [ファイル名]</code> で git 管理外にする必要あり</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># 指定したディレクトリを git 追跡対象から除外</span>
+node_modules/
+styleguide/
+
+<span style="color: #999999; font-style: italic"># 指定したファイルを git 追跡対象から除外（ワイルドカード使用可能）</span>
+*.txt
+
+<span style="color: #999999; font-style: italic"># 除外対象から除く（除外しない）場合は先頭に ! ~つける</span>
+!readme.txt
+</pre></div>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/manipulate-git-branchs/">
+                                Git ブランチの操作
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        
+
+<h3 id="基本コマンド">基本コマンド</h3>
+
+<p>まずはローカルリポジトリでブランチを新規作成したり削除したりするコマンド</p>
+
+<h4 id="ブランチ一覧の表示">ブランチ一覧の表示</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch
+</pre></div>
+
+<h4 id="新規ブランチの作成">新規ブランチの作成</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch ＜作成するブランチ名＞
+</pre></div>
+
+<h4 id="ブランチの削除">ブランチの削除</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -d ＜削除するブランチ名＞
+</pre></div>
+
+<h4 id="ブランチ名の変更">ブランチ名の変更</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -m ＜変更後のブランチ名＞
+</pre></div>
+
+<h3 id="リモートリポジトリのブランチとの連動">リモートリポジトリのブランチとの連動</h3>
+
+<p>次にリモートブランチとの連動。はじめはイマイチローカルブランチとリモートブランチの関係を理解しにくいけど、追跡ブランチの概念を理解するとわかりやすい。そのあたりは「<a href="http://www.kaeruspoon.net/articles/1078" target="_bkank">Gitのリモートブランチと追跡ブランチは違うよ</a>」の記事が参考になるかも。</p>
+
+<h4 id="追跡ブランチ一覧の表示">追跡ブランチ一覧の表示</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -r
+</pre></div>
+
+<ul>
+<li>このオブション（-r）は、リモートブランチ一覧の表示じゃない</li>
+<li>参考： <a href="http://www.kaeruspoon.net/articles/1078" target="_bkank">Gitのリモートブランチと追跡ブランチは違うよ</a></li>
+</ul>
+
+<h4 id="追跡ブランチとリモートブランチの紐付け一覧の表示">追跡ブランチとリモートブランチの紐付け一覧の表示</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -vv
+</pre></div>
+
+<h4 id="表示例">表示例</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -vv
+  bk     a49334e <span style="color: #d0d0d0">[</span>origin/bk<span style="color: #d0d0d0">]</span> backup at <span style="color: #3677a9">2015</span>-08-12 <span style="color: #3677a9">11</span>:06:24
+* dev    802a795 <span style="color: #d0d0d0">[</span>origin/dev: gone<span style="color: #d0d0d0">]</span> add gulp-connect-php
+  master 5e87124 <span style="color: #d0d0d0">[</span>origin/master<span style="color: #d0d0d0">]</span> modified: centering swap btn
+</pre></div>
+
+<ul>
+<li>* がついているのが現在いるブランチ</li>
+<li>[] の中が紐付いているリモートブランチ</li>
+<li>[] の中に 「:gone」が付いているのは、紐付け解除されている状態（以前は紐付いていた）</li>
+</ul>
+
+<h4 id="特定のリモートブランチとの紐付け">特定のリモートブランチとの紐付け</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -u ＜リモートリポジトリ名＞/＜紐付けるリモートブランチ名＞
+</pre></div>
+
+<h4 id="リモートブランチとの紐付けを解除する">リモートブランチとの紐付けを解除する</h4>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -r -d ＜リモートリポジトリ名＞/＜解除するリモートブランチ名＞
+</pre></div>
+
+<h3 id="各ブランチの最終コミットの一覧の表示">各ブランチの最終コミットの一覧の表示</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>git branch -v
+</pre></div>
+
+<h3 id="ブランチ紐付けの例">ブランチ紐付けの例</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #d0d0d0">[</span>src/<span style="color: #d0d0d0">]</span>git branch -vv
+* bk     a49334e backup at <span style="color: #3677a9">2015</span>-08-12 <span style="color: #3677a9">11</span>:06:24
+  master 5e87124 <span style="color: #d0d0d0">[</span>origin/master<span style="color: #d0d0d0">]</span> modified: centering swap btn
+</pre></div>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #d0d0d0">[</span>src/<span style="color: #d0d0d0">]</span>git branch -u origin/bk
+Branch bk <span style="color: #24909d">set</span> up to track remote branch bk from origin.
+</pre></div>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #d0d0d0">[</span>src/<span style="color: #d0d0d0">]</span>git branch -vv
+* bk     a49334e <span style="color: #d0d0d0">[</span>origin/bk<span style="color: #d0d0d0">]</span> backup at <span style="color: #3677a9">2015</span>-08-12 <span style="color: #3677a9">11</span>:06:24
+  master 5e87124 <span style="color: #d0d0d0">[</span>origin/master<span style="color: #d0d0d0">]</span> modified: centering swap btn
+</pre></div>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/branch-name-in-bash-prompt/">
+                                Git ブランチ名を Bash プロンプトに表示する
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        
+
+<h2 id="test">test</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #6ab825; font-weight: bold">function</span> <span style="color: #d0d0d0">fancyAlert(arg)</span> <span style="color: #d0d0d0">{</span>
+  <span style="color: #6ab825; font-weight: bold">if</span><span style="color: #d0d0d0">(arg)</span> <span style="color: #d0d0d0">{</span>
+    <span style="color: #d0d0d0">$.facebox({div:</span><span style="color: #ed9d13">&#39;#foo&#39;</span><span style="color: #d0d0d0">})</span>
+  <span style="color: #d0d0d0">}</span>
+<span style="color: #d0d0d0">}</span>
+</pre></div>
+
+<h2 id="やりたいこと">やりたいこと</h2>
+
+<ul>
+<li>シェル（bash）のプロンプトに git のブランチ名を表示する</li>
+</ul>
+
+<h2 id="環境">環境</h2>
+
+<ul>
+<li>Mac OSX Yosemite</li>
+</ul>
+
+<h2 id="設定手順">設定手順</h2>
+
+<ol>
+<li><code>git-prompt.sh</code> と <code>git-completion.bash</code> の取得 &amp; 設置</li>
+<li><code>~/.bashrc</code> の編集</li>
+</ol>
+
+<h3 id="1-git-prompt-sh-の取得-設置">(1) git-prompt.sh の取得 &amp; 設置</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>mkdir tmp
+<span style="color: #24909d">cd</span> tmp
+git clone https://github.com/git/git.git
+cp git/contrib/completion/git-prompt.sh /usr/local/etc/bash_completion.d/
+cp git/contrib/completion/git-completion.bash /usr/local/etc/bash_completion.d/
+</pre></div>
+
+<h3 id="2-bashrc-の編集">(2) .bashrc の編集</h3>
+
+<ul>
+<li><code>.bashrc</code> に以下を追加する</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #24909d">source</span> /usr/local/etc/bash_completion.d/git-prompt.sh
+<span style="color: #24909d">source</span> /usr/local/etc/bash_completion.d/git-completion.bash
+<span style="color: #40ffff">GIT_PS1_SHOWDIRTYSTATE</span><span style="color: #d0d0d0">=</span><span style="color: #24909d">true</span>
+<span style="color: #24909d">export</span> <span style="color: #40ffff">PS1</span><span style="color: #d0d0d0">=</span><span style="color: #ed9d13">&#39;[\[\033[32m\]@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]]\&#39;</span>
+</pre></div>
+
+<ul>
+<li><code>export PS1=</code> の設定はお好みで</li>
+<li><code>$(__git_ps1)</code> が git のブランチ名</li>
+<li><code>.bashrc</code> の編集が終わったら <code>source .bashrc</code> を忘れずに</li>
+</ul>
+
+<h2 id="表示イメージ">表示イメージ</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #d0d0d0">[</span>@PCName: ~/Vagrant/LAMP/Peach <span style="color: #d0d0d0">(</span>master *<span style="color: #d0d0d0">)]</span>
+</pre></div>
+
+<h2 id="シェル起動時に-bashrc-が読み込まれない場合">シェル起動時に .bashrc が読み込まれない場合</h2>
+
+<ul>
+<li><code>.bash_profile</code> に以下を追加する</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #6ab825; font-weight: bold">if</span> <span style="color: #d0d0d0">[</span> -f ~/.bashrc <span style="color: #d0d0d0">]</span> <span style="color: #d0d0d0">;</span> <span style="color: #6ab825; font-weight: bold">then</span>
+. ~/.bashrc
+<span style="color: #6ab825; font-weight: bold">fi</span>
+</pre></div>
+
+<hr />
+
+<h2 id="bash-completion-のインストール">bash-completion のインストール</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># ダウンロード</span>
+wget http://bash-completion.alioth.debian.org/files/bash-completion-1.2.tar.bz2
+
+<span style="color: #999999; font-style: italic"># インストール</span>
+tar xvjf bash-completion-1.2.tar.bz2
+<span style="color: #24909d">cd</span> bash-completion-1.2
+./configure
+make
+sudo make install
+</pre></div>
+
+<p><code>/usr/local/etc</code> に <code>bash_completion.d</code> としてインストールされる</p>
+
+<h2 id="git-prompt-sh-のインストール">git-prompt.sh のインストール</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh -O ~/.git-prompt.sh
+sudo mv /usr/local/etc/bash_completion.d/git-prompt.sh
+</pre></div>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+</pre></div>
+
+<ul>
+<li><a href="http://git-prompt.sh/">git-prompt.sh ダウンロードページ</a></li>
+</ul>
+
+<h2 id="git-completion-bash-のインストール">git-completion.bash のインストール</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>wget <span style="color: #ed9d13">&#39;http://git.kernel.org/?p=git/git.git;a=blob_plain;f=contrib/completion/git-completion.bash;hb=HEAD&#39;</span> -O git-completion.bash
+sudo mv git-completion.bash /usr/local/etc/bash_completion.d/git
+</pre></div>
+
+<h2 id="bashrc-の編集">~/.bashrc の編集</h2>
+
+<pre><code># プロンプトに git のブランチ名を表示する
+source /usr/local/etc/bash_completion.d/git-prompt.sh
+source /usr/local/etc/bash_completion.d/git-completion.bash
+GIT_PS1_SHOWDIRTYSTATE=true
+export PS1='[\[\033[32m\]@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]]\'
+</code></pre>
+
+<h2 id="bashrc-の読み込み">~/.bashrc の読み込み</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #24909d">source</span> .bashrc
+</pre></div>
+
+<h2 id="エラーが出た場合">エラーが出た場合。</h2>
+
+<p>インストールが上手くいってないと、以下のエラーが出る。</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>-bash: __git_ps1: <span style="color: #24909d">command</span> not found
+</pre></div>
+
+<p><code>/usr/local/etc/bash_completion.d</code> 以下に、<code>git-prompt.sh</code> と <code>git-completion.bash</code> があるか確認する。</p>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/create-new-git-repository/">
+                                Git リポジトリの作成
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        <p>…or create a new repository on the command line</p>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #24909d">echo</span> <span style="color: #ed9d13">&quot;# dopecker&quot;</span> &gt;&gt; README.md
+git init
+git add README.md
+git commit -m <span style="color: #ed9d13">&quot;first commit&quot;</span>
+git remote add origin https://github.com/ontheroadjp/dopecker.git
+git push -u origin master
+</pre></div>
+
+<p>…or push an existing repository from the command line</p>
+
+<pre><code>git remote add origin https://github.com/ontheroadjp/dopecker.git
+git push -u origin master
+</code></pre>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/manage-dotfiles-by-git/">
+                                Github で dotfiles を管理する
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        <div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>mkdir ~/dotfiles <span style="color: #d0d0d0">&amp;&amp;</span> <span style="color: #24909d">cd</span> ./dotfiles
+mv ~/.bashrc dotfiles
+mv ~/.bash_profile dotfiles
+mv ~/.bash_history dotfiles
+
+ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/dotfiles/.bash_history ~/.bash_history
+
+<span style="color: #24909d">cd</span> ~/dotfiles
+git init
+git add -A
+git commit -m <span style="color: #ed9d13">&quot;initial commit&quot;</span>
+git remote add origin http://github.com/ontheroadjp/dotfiles.git
+git push -u origin master
+</pre></div>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/git/chnge-previos-commit-message/">
+                                過去の コミットメッセージを書き換える
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">May 21, 2017</span>
+        
+                        
+        
+        
+                        <div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #999999; font-style: italic"># 修正したいコミットの一つ前のコミットハッシュをコピー</span>
+git log --graph --date-order --all --pretty<span style="color: #d0d0d0">=</span>format:<span style="color: #ed9d13">&#39;%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s&#39;</span>
+
+git rebase -i ＜修正したいコミットの一つ前のコミットハッシュ＞
+</pre></div>
+
+<p>vim が起動したら・・・</p>
+
+<p>コミットメッセージを変更したいコミットの <code>pick</code> を <code>r</code>（または <code>reword</code>） に変更して vim を終了するとコミットメッセージ修正画面に変わるので、コミットメッセージを修正して vim を終了させる</p>
+
+                    </div>
+                
+            
+                
+                    <div class="post">
+                        <h1 class="post-title">
+                            <a href="https://ontheroadjp.github.io/memo/dev/sakura_vps/initial-settings-of-the-sakura-vps/">
+                                さくら VPS 初期設定
+                            </a>
+                        </h1>
+        
+                        <span class="post-date">Apr 19, 2017</span>
+        
+                        
+        
+        
+                        
+
+<h1 id="さくら-vps-の基本設定">さくら VPS の基本設定</h1>
+
+<h2 id="ホスト名の設定">ホスト名の設定</h2>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ vim /etc/sysconfig/network
+
+<span style="color: #999999; font-style: italic">#HOSTNAME=localhost.localdomain</span>
+<span style="color: #40ffff">HOSTNAME</span><span style="color: #d0d0d0">=</span>NOBITA.localdomain
+</pre></div>
+
+<h2 id="vnc-コンソールのキー配列の設定">VNC コンソールのキー配列の設定</h2>
+
+<p>MacBookPro US 配列からさくらVPS の CentOS6.7（標準OS）へ、さくらのVNC コンソール経由で接続すると、キー入力が正しく行えないので、キーボード設定を正しく設定する必要がある。</p>
+
+<p>キーボード設定は <code>さくらVPS の設定</code> と <code>CentOS の設定</code> を行う必要あり。</p>
+
+<h3 id="1-さくらvps-の設定">1. さくらVPS の設定</h3>
+
+<ul>
+<li><p><a href="https://secure.sakura.ad.jp/vps/#/login">VPSコントロールパネル</a>にログイン後、画面右上の <code>設定</code> メニューから <code>サーバー情報編集</code> を選択して <code>VNC コンソールキー配列</code> から <code>en-us</code> を選択する。</p></li>
+
+<li><p>CentOS を再起動すると変更が有効になる。</p></li>
+</ul>
+
+<p>参考：<a href="https://help.sakura.ad.jp/app/answers/detail/a_id/2406/related/1">さくらのサポート情報:キー配列の変更方法</a></p>
+
+<h3 id="2-centos-の設定">2. CentOS の設定</h3>
+
+<ul>
+<li><code>$ loadkeys us</code> コマンドで US 配列になる（ちゃんと入力できるようになる）けど、CentOS を再起動するたびに設定をしなければならない。</li>
+
+<li><p>なので、とりあえず <code>$ loadkeys us</code> でちゃんと入力できるようにしてから、 <code>/etc/sysconfig/keyboard</code> の中を、</p>
+
+<pre><code>KEYTABLE=&quot;us&quot;
+MODEL=&quot;pc105+inet&quot;
+LAYOUT=&quot;us&quot;
+KEYBOARDTYPE=&quot;pc&quot;
+</code></pre>
+
+<p>に変更する。</p></li>
+
+<li><p><code>$ loadkeys us</code> する前に、<code>vi</code> を起動すると <code>:</code> が入力できなくて、強制再起動する羽目になる。</p></li>
+</ul>
+
+<h2 id="ssh-接続の設定">SSH 接続の設定</h2>
+
+<h3 id="1-秘密鍵と公開鍵ペアの生成">1. 秘密鍵と公開鍵ペアの生成</h3>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key <span style="color: #d0d0d0">(</span>/Users/username/.ssh/id_rsa<span style="color: #d0d0d0">)</span>:  ← 作成される場所。問題なければEnter。
+Enter passphrase <span style="color: #d0d0d0">(</span>empty <span style="color: #6ab825; font-weight: bold">for</span> no passphrase<span style="color: #d0d0d0">)</span>:  ← パスフレーズの入力。省略する場合はそのままEnter。
+Enter same passphrase again:  ← パスフレーズの再入力。省略した場合はそのままEnter。
+</pre></div>
+
+<p>上記実行すると、<code>~/.ssh/</code> に秘密鍵（<code>id_rsa</code>）と公開鍵（<code>id_rsa.pub</code>）が生成される。</p>
+
+<h3 id="2-さくらvps-へ公開鍵を配置">2. さくらVPS へ公開鍵を配置</h3>
+
+<p>SSH 接続したいユーザーのホームディレクトリに <code>.ssh/</code> を作成し、<code>authorized_keys</code> という名前で保存する。</p>
+
+<p><code>~/.ssh/authorized_keys</code></p>
+
+<h3 id="3-ssh-接続元の設定">3. SSH 接続元の設定</h3>
+
+<p><code>~/.ssh/config</code> に以下の内容を記入して保存すると <code>$ ssh &lt;ホスト名&gt;</code> で接続できる。</p>
+
+<p>設定例</p>
+
+<pre><code>$cat ~/.ssh/config
+
+Host sakuraroot
+	HostName xxx.xxx.xxx.xxx
+	Port 22
+	User root
+ 
+Host sakura
+	HostName xxx.xxx.xxx.xxx
+	Port 10022
+	User nobita
+</code></pre>
+
+<p>SSH 接続</p>
+
+<pre><code>$ ssh sakura
+</code></pre>
+
+<ol>
+<li><p>コンソール VPS でログイン</p>
+
+<ul>
+<li>ユーザー名： root</li>
+<li>パスワード： インストール時に設定したパスワード</li>
+</ul></li>
+
+<li><p>root で SSH 接続設定</p>
+
+<ul>
+<li><code>~/.ssh/config</code> を作成する</li>
+<li>接続時に root パスワード聞かれる（パスワード認証）</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #40ffff">$vim</span> ~/.ssh/config
+    
+Host sakuraroot
+    HostName xxx.xxx.xxx.xxx
+    Port <span style="color: #3677a9">22</span>
+    User root
+</pre></div></li>
+
+<li><p><code>$ ssh sakuraroot</code> で SSH 接続確認</p></li>
+
+<li><p>Chef solo のインストール</p>
+
+<ul>
+<li>接続時に root パスワード聞かれる（パスワード認証）</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ knife solo prepare sakuraroot
+</pre></div></li>
+
+<li><p>Chef solo の実行</p>
+
+<ul>
+<li>接続時に root パスワード聞かれる（パスワード認証）</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span>$ knife solo cook sakuraroot
+</pre></div>
+
+<ul>
+<li>Chef solo 実行後は <code>$ ssh sakuraroot</code> では SSH 接続ができなくなる（SSH ポートが 22番から 10022番へ変更となるため）</li>
+</ul></li>
+
+<li><p>一般ユーザーで SSH 接続</p>
+
+<ul>
+<li><code>~/.ssh/config</code> に以下を追記</li>
+</ul>
+<div class="highlight" style="background: #202020"><pre style="line-height: 125%"><span></span><span style="color: #40ffff">$vim</span> ~/.ssh/config
+    
+Host sakura
+    HostName xxx.xxx.xxx.xxx
+    Port <span style="color: #3677a9">10022</span>
+    User nobita
+</pre></div>
+
+<ul>
+<li>接続できたら <code>$ su -</code> で root 権限が得られるか確認</li>
+<li><code>sudo</code> も確認。例）<code>$ sudo iptables -L</code></li>
+</ul></li>
+</ol>
+
+                    </div>
+                
+            
+
+        </div>
+
+</body>
+</html>
+
