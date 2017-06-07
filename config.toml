@@ -1,0 +1,32 @@
+baseurl = "https://ontheroadjp.github.io/memo/"
+#languageCode = "en-US"
+languageCode = "ja-JP"
+title = "MEMO"
+copyright = "ontheroad.jp"
+PygmentsCodeFences = true
+pygmentsuseclasses = false
+pygmentsstyle = "native"
+
+[Author]
+	name = "ontheroad_jp"
+    email = "dev@ontheroad.jp"
+    url = "dev.ontheroad.jp"
+
+[Permalinks]
+#	blog = "/:year/:month/:slug/"
+	blog = "/:year/:month/:filename/"
+	code = "/:filename/"
+
+[Taxonomies]
+	tag = "tags"
+    category = "categories"
+	series = "series"
+
+[params]
+    theme = "blue"
+	description = "Memos of the WEB Development"
+	twitter = "https://twitter.com/natethefinch"
+	github = "https://github.com/ontheroadjp"
+	gplus = "https://plus.google.com/+NateFinch"
+	disqus = "hogecom"
+	logo = "/memo/images/logo-512x512-white.png"

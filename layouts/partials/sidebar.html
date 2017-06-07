@@ -1,0 +1,44 @@
+<div class="sidebar">
+    <div class="container sidebar-sticky">
+        <div class="sidebar-about" align=center>
+
+            <a href="{{ .Site.BaseURL }}">
+                {{ with .Site.Params.logo }}
+                    <img src="{{ . }}" width=50% />
+                {{ end }}
+            </a>
+
+            <p class="lead">
+                {{ with .Site.Params.description }} 
+                    {{ . }} 
+                {{ end }}
+            </p>
+
+        </div><!-- /.sidebar-about -->
+
+        <ul class="sidebar-nav">
+            <li><a href="{{ .Site.BaseURL }}/dev">Posts</a></li>
+            {{ range .Site.Menus.main }}
+                <li><a href="{{.URL}}">{{ .Name }} </a></li>
+            {{ end }}
+            <br/> 
+            {{with .Site.Pages.ByTitle -}}
+                <li>Code:</li>
+                {{ range . -}} 
+                    {{if eq .Type "code" -}}
+                        <li><a href="{{ .Params.vanity }}">{{ .Title }} </a></li>
+                    {{ end }} 
+                {{ end }} 
+            {{ end }}
+        </ul>
+
+        {{ with .Site.Params.twitter }}<a href="{{.}}"><i class="fa fa-twitter-square"></i></a>&nbsp;&nbsp;{{end}} 
+        {{ with .Site.Params.linkedin}}<a href="{{.}}"><i class="fa fa-linkedin-square"></i></a>&nbsp;&nbsp;{{end}}
+        {{ with .Site.Params.facebook }}<a href="{{.}}"><i class="fa fa-facebook-square"></i></a>&nbsp;&nbsp;{{end}}
+        {{ with .Site.Params.github }}<a href="{{.}}"><i class="fa fa-github-square"></i></a>&nbsp;&nbsp;{{end}} 
+        {{ with .Site.Params.gplus }}<a href="{{.}}"><i class="fa fa-google-plus"></i></a>{{end}} 
+
+        <p class="footnote">powered by <a href="http://hugo.spf13.com">Hugo</a> <br/> &copy; {{ now.Format "2006" }} Nate Finch. All rights reserved.</p>
+
+    </div>
+</div>

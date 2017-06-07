@@ -1,0 +1,30 @@
+{{ partial "header.html" . }}
+{{ partial "sidebar.html" . }}
+
+    <div class="content container">
+        <div class="post">
+            <h1 class="post-title">{{ .Title }}</h1>
+            <span class="post-date">
+                {{ .Date.Format "Mon, Jan 2, 2006" }}
+            </span>
+
+            <nav>
+                {{ with .Params.categories }}
+                    <div>
+                        Categories:{{ range . }} <a href="/categories/{{ . }}/">{{ . }}</a>{{ end }}
+                    </div>
+                {{ end }}
+            
+                {{ with .Params.tags }}
+                    <div>
+                        Tags:{{ range . }} <a href="/tags/{{ . }}/">#{{ . }}</a>{{ end }}
+                    </div>
+                {{ end }}
+            </nav>
+    
+            {{ .Content }}
+            {{ template "partials/comments.html" . }}
+        </div><!-- /.post -->
+    </div><!-- /.content .container -->
+
+{{ partial "footer.html" . }}
