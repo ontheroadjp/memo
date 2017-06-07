@@ -30,5 +30,5 @@ hugo && {
     && git commit -m "Publishing to gh-pages (publish.sh)" \
     && echo "success!"
 } || {
-    echo "failed: generage static files.
+    echo "failed: generage static files."
 }
