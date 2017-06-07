@@ -8,7 +8,6 @@
 
         <h1>Tag</h1>
 
-<!--
         {{ range $taxonomy, $value := .Data }}
             {{if ne $taxonomy "Pages"}}
                 {{ range (index $page.Params $taxonomy) }}
@@ -28,7 +27,6 @@
                 {{end}}<!-- ./ range -->
             {{end}}<!-- ./ if -->
         {{end}}<!-- ./ range -->
--->
 
         <ul>
             {{ range .Data.Pages }}
