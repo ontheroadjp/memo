@@ -1,5 +1,6 @@
 .DS_Store
 public
+node_modules
 
 # Architecture specific extensions/prefixes
 *.[568vq]
