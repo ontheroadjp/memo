@@ -6,36 +6,37 @@ draft = false
 type = "post"
 categories = ["Tools"]
 tags = ["Git"]
+index = true
 [author]
 	name = "ontheroad_jp"
 	uri = ""
 +++
 
-## ローカルリポジトリの作成
+{{% h2 ローカルリポジトリの作成 %}}
 
 * 初期化して、現在あるファイルを追加して、コミットすればOK
 
 ```bash
-$ git init
-$ git add *
-$ git commit -m "initial commit"
-$ git push -u origin master # -u で通遺跡ブランチ作成される
+git init
+git add *
+git commit -m "initial commit"
+git push -u origin master # -u で通遺跡ブランチ作成される
 ```
 
-## リモートリポジトリからプロジェクトをコピー
+{{% h2 リモートリポジトリからプロジェクトをコピー %}}
 
 ```bash
-$ git clone [リモートリポジトリ名]
-$ git clone -b [ブランチ名] [リモートリポジトリ名]
+git clone [リモートリポジトリ名]
+git clone -b [ブランチ名] [リモートリポジトリ名]
 ```
 
 ### ghq の場合
 
 ```bash
-$ ghq add [ベンダー名]/[リポジトリ名]
+ghq add [ベンダー名]/[リポジトリ名]
 ```
 
-## ファイル更新までの基本手順
+{{% h2 ファイル更新までの基本手順 %}}
 
 * ざっくりは以下の様な流れ
 
@@ -69,8 +70,8 @@ $ ghq add [ベンダー名]/[リポジトリ名]
 ## 初期設定
 
 ```bash
-$ cd <git 管理したいディレクトリ>
-$ git init
+cd <git 管理したいディレクトリ>
+git init
 ```
 
 以上
@@ -78,14 +79,14 @@ $ git init
 // git の正当性をチェックする
 
 ```bash
-$ git fsck
-$ git fsck --full
+git fsck
+git fsck --full
 ```
 
 // 不要なオブジェクト削除&最適化
 
 ```bash
-$ git gc
+git gc
 ```
 
 ## 状態の確認
@@ -93,8 +94,8 @@ $ git gc
 ### インデックスとワーキングツリーの状況
 
 ```
-$ git status
-$ git status -s
+git status
+git status -s
 ```
 
 
@@ -105,34 +106,34 @@ $ git status -s
 
 ```bash
 # コミットログを表示
-$ git log
+git log
 
 # コミットログに変更内容を追加して表示
-$ git log -p
+git log -p
 
 # コミットログにそれぞれの変更内容（diff）を追加して表示しつつ、最新の3件のみ表示
-$ git log -p -3
+git log -p -3
 
 # コミットの統計情報を見る
-$ git log --stat
+git log --stat
 
 # コミットログを1行で表示
-$ git log --pretty=oneline
+git log --pretty=oneline
 
 # 過去2週間以内のコミットログのみ表示
-$ git log --since=2.weeks
-
-# おすすめオプション
+git log --since=2.weeks
 ```
 
-* ``git log`` //コミットのログが見られる
-* ``git reflog`` //HEAD のログが見られる
-* ``git reflog origin/branch_name`` //pushのログが見れる
 * ログには色々なオプションがあるけど、おすすめは以下のコマンド。
 
 ```bash
-$ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset"
+git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%s %C(yellow)%d%Creset"
 ```
+
+## git reflog
+
+* ``git reflog``
+* ``git reflog origin/branch_name`` //pushのログが見れる
 
 ## git diff
 
@@ -141,8 +142,8 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * インデックスとワーキングツリーの差分
 * 新規に作成されたファイルは Git に track されていないので、新規に作成したファイルはこのコマンドでは表示されない。
 
-	```
-	$ git diff
+	```bash
+	git diff
 	```
 
 ### インデックスに add したモノを表示
@@ -151,8 +152,8 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * コミット直前に良く使う
 
 	```bash
-	$ git diff --cache
-	$ git diff --staged
+	git diff --cache
+	git diff --staged
 	```
 
 ### 直前のコミットによる変更を表示
@@ -161,12 +162,12 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * コミット直後に良く使う
 
 	```bash
-	$ git diff HEAD^ HEAD
+	git diff HEAD^ HEAD
 	```
 * ``--stat`` オプションをつけると統計情報のみを表示
 
 	```bash
-	$ git diff HEAD^ HEAD --stat
+	git diff HEAD^ HEAD --stat
 	```
 
 
@@ -175,7 +176,7 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * ほとんど使うことはない
 	
 	```bash
-	$ git diff HEAD
+	git diff HEAD
 	```
 
 
@@ -190,10 +191,10 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 
 	```bash
 	# 直前のコミットの内容に戻す
-	$ git checkout <ファイル名>
+	git checkout <ファイル名>
 
 	# 任意のコミットの内容に戻す
-	$ git checkout <コミットID> <ファイル名>
+	git checkout <コミットID> <ファイル名>
 	```
 
 ### ファイルの名前変更
@@ -201,34 +202,34 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * 
 
 	```bash
-	$ git mv [変更前のファイル名] [変更後のファイル名]
-	$ git commit -a -m "rename"
-	$ git push origin master
+	git mv [変更前のファイル名] [変更後のファイル名]
+	git commit -a -m "rename"
+	git push origin master
 	```
 
-#### ファイルの削除（Git 管理対象外にする）
+### ファイルの削除（Git 管理対象外にする）
 
 * Git 管理から外す（削除する）
 * コミットを実行した時に、ワーキングツリー（PC） からファイルが削除される
 
 	```bash
-	$ git rm <ファイル名>
+	git rm <ファイル名>
 	```
 
 * Git 追跡対象外にしつつ、ワーキングツリー（PC）にファイルを残したい場合は、
 
 	```bash
-	$ git rm --cached <ファイル名>
+	git rm --cached <ファイル名>
 	```
 
 ### 特定のモノをインデックスへ追加
 
 * スペース区切りで複数ファイル追加 OK
-* ワイルドカード使える　（例）$ git add *.css
+* ワイルドカード使える　（例）git add *.css
 * ディレクトリ指定も可能
 
 	```bash
-	$ git add ＜ファイル名＞
+	git add ＜ファイル名＞
 	```
 
 ### 新規作成/変更/削除されたモノを全てインデックスへ追加
@@ -236,7 +237,7 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * 
 
 	```bash
-	$ git add -A
+	git add -A
 	```
 
 ### 変更/削除されたモノのみをインデックスへ追加（新規作成は対象外）
@@ -244,10 +245,10 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * 
 
 	```
-	$ git add -u
+	git add -u
 	```
 
-#### 新規作成/変更されたモノをインデックスへ追加（削除は対象外）
+### 新規作成/変更されたモノをインデックスへ追加（削除は対象外）
 
 * 
 
@@ -262,7 +263,7 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * 
 
 	```bash
-	$ git reset
+	git reset
 	```
 
 ### add した特定のモノを元に戻す
@@ -270,17 +271,17 @@ $ git log --graph --name-status --pretty=format:"%C(red)%h %C(green)%an %Creset%
 * スペース区切りで複数指定可能
 
 	```bash
-	$ git reset <ファイル名>
+	git reset <ファイル名>
 	```
 
 ## git push
 
 ```bash
 # ステージングの内容をリモートレポジトリへ反映
-$ git push origin dev
+git push origin dev
 
 # ステージングの内容をリモートレポジトリへ反映し追跡ブランチを作成
-$ git push -u origin dev
+git push -u origin dev
 ```
 
 ## git reset
@@ -290,13 +291,13 @@ $ git push -u origin dev
 * 
 
 	```bash
-	$ git reset <場所>
+	git reset <場所>
 	```
 
 	例）HEAD とインデックスを最終のコミット位置に戻す場合
 
 	```bash
-	$ git reset HEAD^
+	git reset HEAD^
 	```
 
 ### HEAD のみを<場所>へ移動する（commit のみ取り消し）
@@ -304,7 +305,7 @@ $ git push -u origin dev
 * 
 
 	```bash
-	$ git reset --soft <場所>
+	git reset --soft <場所>
 	```
 
 ### HEAD, インデックス, ワーキングツリー全てを<場所>へ移動する
@@ -312,7 +313,7 @@ $ git push -u origin dev
 * 
 
 	```bash
-	$ git reset --hard <場所>
+	git reset --hard <場所>
 	```
 
 ### <場所>の指定方法
@@ -354,12 +355,12 @@ $ git push -u origin dev
 * 
 
 	```bash
-	$ git reset --hard HEAD^^ # HEAD^と指定するつもりが間違えた!
-	$ git reflog
+	git reset --hard HEAD^^ # HEAD^と指定するつもりが間違えた!
+	git reflog
 	f5cb888 HEAD@{0}: head^^: updating HEAD
 	b0b8073 HEAD@{1}: merge @{-1}: Merge made by the 'recursive' strategy.
 	fe3972d HEAD@{2}: checkout: moving from fix/some-bug to master
-	$ git reset --hard HEAD@{1} # reset --hard HEAD^^する前に戻れる
+	git reset --hard HEAD@{1} # reset --hard HEAD^^する前に戻れる
 	```
 
 	参考： [いざという時のためのgit reflog - Qiita](http://qiita.com/yaotti/items/e37c707938847aee671b)
@@ -372,9 +373,9 @@ $ git push -u origin dev
 * コマンドを実行すると ``$EDITOR`` で指定したエディタが起動するので、最上段の空白行にコメントを入力して、エディタを終了するとコミットされる。
 
 	```bash
-	$ git commit
+	git commit
 	または
-	$ git commit -v # ← diff の内容も表示する
+	git commit -v # ← diff の内容も表示する
 	```
 
 * 環境変数 ``EDITOR`` の指定方法。
@@ -387,7 +388,7 @@ $ git push -u origin dev
 * コミットメッセージをインラインで指定する
 
 	```bash
-	$ git commit -m "<コメント>"
+	git commit -m "<コメント>"
 	```
 
 ### 直前のコミットを上書きしてコミット
@@ -396,7 +397,7 @@ $ git push -u origin dev
 * `` git commit`` した後に、``git add`` などでインデックスを変更したのち、``git commit --amend`` を実行する
 
 	```bash
-	$ git commit --amend
+	git commit --amend
 	```
 
 * `` git commit`` した後に、そのコミットのコメントだけを変更する場合は、``git add`` など何もせずに、``git commit --amend`` を実行する
@@ -406,8 +407,8 @@ $ git push -u origin dev
 * 
 
 	```bash
-	$ git reset --soft HEAD^	// ワークディレクトリはそのまま
-	$ git reset --hard HEAD^	// ワークディレクトリも元に戻す
+	git reset --soft HEAD^	// ワークディレクトリはそのまま
+	git reset --hard HEAD^	// ワークディレクトリも元に戻す
 	```
 
 	* HEAD^	直前
@@ -513,88 +514,88 @@ $ git push -u origin dev
 ### タグ追加
 
 ```bash
-$ git tag -a 1.0.0 -m "<コメント>"
+git tag -a 1.0.0 -m "<コメント>"
 
 # 過去に遡ってタグをつける
-$ git tag 1.0.0 <sha1>
+git tag 1.0.0 <sha1>
 ```
 
 ### タグ一覧
 
 ```bash
-$ git tag
+git tag
 ```
 
 ### 特定のタグにチェックアウト
 
 ```bash
-$ git checkout refs/tags/2.4.6
+git checkout refs/tags/2.4.6
 ```
 
 ### 対象タグのコミットを表示
 
 ```bash
-$ git tag show 1.0.0
+git tag show 1.0.0
 ```
 
 ### タグ削除
 
 ```bash
-$ git tag -d 1.0.0
+git tag -d 1.0.0
 ```
 
 ### タグをリモートへプッシュ
 
 ```bash
 # タグを指定する
-$ git push origin 1.0.0
+git push origin 1.0.0
 
 # push していないタグを全てプッシュ
-$ git push origin --tags
+git push origin --tags
 ```
 
 ＜リモートのタグを削除＞
 
 ```bash
-$ git push origin :refs/tags/v1.0.0
+git push origin :refs/tags/v1.0.0
 ```
 
 ## ローカルブランチの操作
 
 ```bash
 # ローカルブランチの一覧
-$ git branch
+git branch
 
 # リモートとローカルのブランチの一覧
-$ git branch -a
+git branch -a
 
 # 現在のブランチから新規ブランチを派生させる
-$ git branch [branch_name]
+git branch [branch_name]
 
 # 現在のブランチから新規ローカルブランチを派生して、そのブランチへ移動（リモートブランチがない場合に使う）
-$ git checkout -b <ブランチ名>
+git checkout -b <ブランチ名>
 
 # 現在のブランチから追跡ブランチと新規ローカルブランチを派生して、そのブランチへ移動（リモートブランチにはあって、ローカルブランチがない場合に使う）
-$ git checkout -b ios8 origin/ios8
+git checkout -b ios8 origin/ios8
 
 # 別のブランチに移動
-$ git checkout [branch_name]
+git checkout [branch_name]
 
 # ブランチの削除
-$ git branch -d [branch_name]
+git branch -d [branch_name]
 
 # 現在のブランチ名の変更(変更したいブランチに切り替えた上で実行)
-$ git branch -m [new_branch_name]
+git branch -m [new_branch_name]
 ```
 
 ## リモートブランチの操作
 
 ```bash
 # 追跡ブランチの一覧
-$ git branch -r
+git branch -r
 
 # 追跡ブランチとローカルのブランチの一覧
-$ git branch -a
+git branch -a
 ```
 
 
@@ -603,20 +604,20 @@ $ git branch -a
 
 ```bash
 # ローカルブランチを削除
-$ git branch -d <削除するブランチ名>
+git branch -d <削除するブランチ名>
 
 # リモートブランチを削除
-$ git push origin :<削除するブランチ名>
+git push origin :<削除するブランチ名>
 
 # 例: dev ローカル & リモートブランチを削除）
-$ git branch -d dev
-$ git push origin :dev
+git branch -d dev
+git push origin :dev
 ```
 
 ### リモートブランチの削除（ローカルブランチは残す）
 
 ```bash
-$ git push --delete origin <削除するブランチ名>
+git push --delete origin <削除するブランチ名>
 ```
 
 ## merge（別ブランチの内容を反映）
@@ -625,16 +626,16 @@ $ git push --delete origin <削除するブランチ名>
 
 ```bash
 # master ブランチへ移動
-$ git checkout master
+git checkout master
 
 # 差分をマージ
-$ git merge [branch_name]
+git merge [branch_name]
 
 # 差分をマージ（ファーストフォワードマージしない）
-$ git merge --no-ff [branch_name]
+git merge --no-ff [branch_name]
 
 # リモートリポジトリへ反映
-$ git push origin master
+git push origin master
 ```
 
 ## リモートレポジトリの設定
@@ -644,30 +645,30 @@ $ git push origin master
 git remote -v
 
 # リモートリポジトリ名（ショートネーム）の一覧を表示
-$ git remote
+git remote
 
 # 接続するリモートリポジトリを追加
 # 例） git remote add master https://github.com/ontheroadjp/arch-madsonic.git
-$ git remote add <shortname> <url>
+git remote add <shortname> <url>
 
 # 接続するリモートリポジトリを追加(その2)
 # 例） git remote add master https://ユーザー名@github.com/ontheroadjp/arch-madsonic.git
-$ git remote add <shortname> <url>
+git remote add <shortname> <url>
 
 # 接続しているリモートリポジトリを解除
 # 例） git remote rm origin
-$ git remote rm <shortname>
+git remote rm <shortname>
 
 # リモートリポジトリの情報を表示
 # 例）git remote show origin
-$ git remote show <shortname>
+git remote show <shortname>
 
 # ローカルの追跡ブランチの情報を更新（リモートブランチの情報と同期）
 git remote update -p
 
 # リモートリポジトリの URL 変更
-# 例） $ git remote set-url origin https://github.com/ontheroadjp/laravel5_bbc.git
-$ git remote set-url [shortname] [url]
+# 例） git remote set-url origin https://github.com/ontheroadjp/laravel5_bbc.git
+git remote set-url [shortname] [url]
 ```
 
 
@@ -676,54 +677,54 @@ $ git remote set-url [shortname] [url]
 ### スタッシュに保存
 
 ```bash
-$ git stash
-$ git stash save
+git stash
+git stash save
 
 # メッセージをつけてスタッシュ
-$ git stash save "message"
+git stash save "message"
 
 # unstage ファイルを全てスタッシュ
-$ git stash -k
+git stash -k
 
 # untrackファイルも含めて全てスタッシュ
-$ git stash -u
+git stash -u
 ```
 
 ### スタッシュの適用
 
 ```bash
 # 直近のスタッシュを適用して削除
-$ git stash pop 
+git stash pop 
 
 # N 番目のスタッシュを適用して削除
-$ git stash pop stash@{N}
+git stash pop stash@{N}
 ```
 
 ### スタッシュの一覧
 
 ```bash
 # スタッシュの一覧
-$ git stash list
+git stash list
 ```
 
 ### スタッシュの内容を確認する
 
 ```bash
 # N番目にスタッシュしたファイルの一覧を表示
-$ git stash show stash@{N}
+git stash show stash@{N}
 
 # N番目にスタッシュしたファイルの変更差分を表示
-$ git stash show -p stash@{N}
+git stash show -p stash@{N}
 ```
 
 ### スタッシュの削除
 
 ```bash
 # 最新のスタッシュを消去
-$ git stash drop
+git stash drop
 
 # N 番目のスタッシュの消去
-$ git stash drop stash@{N}
+git stash drop stash@{N}
 ```
 
 ## rebase -i（過去のコミットメッセージを書き換える）

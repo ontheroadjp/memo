@@ -1,2 +1,14 @@
+<script src="{{ .Site.BaseURL }}/js/smooth-scroll.min.js"></script>
+<script>
+    smoothScroll.init({
+        selector: '[data-scroll]', // 適用される属性値
+        selectorHeader: '[data-scroll-header]', // 上部固定ナビとして処理される属性値。固定ナビをこれつけないと不具合が起きる。
+        speed: 500, // スクロールスピード
+        easing: 'easeInOutQuad', // スクロールのアニメーション
+        offset: 30, // スクロールしたときのオフセット
+        updateURL: true, // ページ内移動したときにURLを変更するか
+        callback: function ( anchor, toggle ) {} // コールバック関数
+    });
+</script>
 </body>
 </html>

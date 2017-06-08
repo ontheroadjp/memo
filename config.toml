@@ -28,5 +28,10 @@ pygmentsstyle = "native"
 	twitter = "https://twitter.com/natethefinch"
 	github = "https://github.com/ontheroadjp"
 	gplus = "https://plus.google.com/+NateFinch"
-	disqus = "hogecom"
+#	disqus = "hogecom"
 	logo = "/memo/images/logo-512x512-white.png"
+#    contentIndex = true
+
+[blackfriday]
+    extensions = ["EXTENSION_AUTO_HEADER_IDS"]
+    plainIDAnchors = true

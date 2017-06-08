@@ -1,0 +1,3 @@
+{{ $text := index .Params 0 }}
+{{ $id := $text | plainify | urlize }}
+<h2 id="{{ $id }}">{{ index .Params 0 }}</h2>

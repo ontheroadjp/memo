@@ -31,23 +31,27 @@
                 </p>
             {{ end }}
 
-<!--
+            {{ if .Params.index }}
                 {{ $headers := findRE "<h2.*?>(.|\n)*?</h2>" .Content }}
                 {{ if ge (len $headers) 1 }}
+                    <label class="content-index-label" for="content-index-check">
+                        Content Index
+                    </label>
+                    <input id="content-index-check" type="checkbox">
+    
                     <div class="content-index">
-                        <h2>Content index</h2>
                         <ul>
-                            {{ range $headers }}
-                            <li>
-                                <a href="#{{ . | plainify | urlize }}">
-                                    {{ . | plainify }}
-                                </a>
-                            </li>
+                            {{ range $i, $v := $headers }}
+                                <li>
+                                    <a data-scroll href="#{{ . | plainify | urlize }}">
+                                        {{ $v | plainify }}
+                                    </a>
+                                </li>
                             {{ end }}
                         </ul>
                     </div>
                 {{ end }}
--->
+            {{ end }}
 
             {{ .Content }}
 

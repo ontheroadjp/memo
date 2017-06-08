@@ -2,7 +2,7 @@
 title = "Git ブランチ名を Bash プロンプトに表示する"
 date = 2017-05-21T06:29:00Z
 updated = 2017-05-21T07:45:48Z
-draft = false
+draft = true
 type = "post"
 categories = ["Tools"]
 tags = ["Git", "Bash"]
@@ -11,16 +11,6 @@ tags = ["Git", "Bash"]
 	uri = ""
 slug = "git_branch_name_in_shell_prompt"
 +++
-
-## test
-
-```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
-  }
-}
-```
 
 ## やりたいこと
 

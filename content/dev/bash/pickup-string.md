@@ -1,10 +1,11 @@
 +++
 title = "部分文字列を取り出す"
 date = 2017-04-19T19:01:00Z
-draft = false
+draft = true
 type = "post"
 categories = ["Linux"]
 tags = ["Shell Script"]
+index = false
 +++
 
 ## パラメータ展開を利用して部分文字列を取得する

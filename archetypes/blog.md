@@ -6,6 +6,7 @@ draft = true
 type = "post"
 categories = [""]
 tags = [""]
+index = false
 [author]
 	name = "ontheroad_jp"
 	uri = ""
