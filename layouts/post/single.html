@@ -16,25 +16,9 @@
                     {{ .Date.Format "Jan 2, 2006" }}
                 </span> | 
 
-                {{ with .Params.categories }}
-                    {{ range . }}
-                        <span class="category">
-                            <a href="/categories/{{ . }}/">
-                                {{ . }}
-                            </a>
-                        </span>
-                    {{ end }}
-                {{ end }}
+                {{ partial "categories.html" . }}
 
-                {{ with .Params.tags }}
-                    {{ range . }}
-                        <span class="tag">
-                            <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">
-                                # {{ . }}
-                            </a>
-                        </span>
-                    {{ end }}
-                {{ end }}
+                {{ partial "tags.html" . }}
             </nav>
 
             {{ if .Params.series }}
@@ -47,6 +31,24 @@
                 </p>
             {{ end }}
 
+<!--
+                {{ $headers := findRE "<h2.*?>(.|\n)*?</h2>" .Content }}
+                {{ if ge (len $headers) 1 }}
+                    <div class="content-index">
+                        <h2>Content index</h2>
+                        <ul>
+                            {{ range $headers }}
+                            <li>
+                                <a href="#{{ . | plainify | urlize }}">
+                                    {{ . | plainify }}
+                                </a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                {{ end }}
+-->
+
             {{ .Content }}
 
             {{ if .Params.series }}
@@ -57,7 +59,7 @@
 
                 <p>
                     <a href="" id="series"></a>
-                    This is a post in the <b>{{$name}}</b> series.<br/>
+                    This is a post in the <b>{{ $name }}</b> series.<br/>
                     Other posts in this series:
                 </p>
 
@@ -66,16 +68,16 @@
 
                 <ul class="series">
                     {{ range $series.Pages }}
-                        <li>{{.Date.Format "Jan 02, 2006"}} - 
+                        <li>{{ .Date.Format "Jan 02, 2006" }} - 
                             {{ if eq .Permalink $link }}
-                                {{.LinkTitle}}
-                            {{else}}
+                                {{ .LinkTitle }}
+                            {{ else }}
                                 <a href="{{.Permalink}}">{{.LinkTitle}} </a>
-                            {{end}}
+                            {{ end }}
                         </li>
-                    {{end}}
+                    {{ end }}
                 </ul>
-            {{end}} 
+            {{ end }} 
 
             {{ template "partials/comments.html" . }}
         </div>

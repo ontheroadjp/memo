@@ -1,9 +1,10 @@
 +++
 title = "sed いろいろ"
 date = 2017-04-19T19:01:00Z
+draft = false
 type = "post"
-draft = true
-tags = ["Shell script"]
+categories = ["Linux"]
+tags = ["Shell Script"]
 +++
 
 # sed いろいろ

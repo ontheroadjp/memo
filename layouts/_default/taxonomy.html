@@ -3,36 +3,58 @@
 
     <div class="content container">
 
-        {{ $root := .}}
+        {{ $root := . }}
         {{ $page := (index .Data.Pages 0) }}
 
-        <h1>Tag</h1>
+        {{ if eq .Data.Singular "category" }}
+            <h1>Posts in  
+                <span class="post-category" style="text-transform: capitalize">
+                    {{ .Data.Term }} Category
+                </span>
+            </h1>
+            {{ partial "posts-list-with-tags.html" . }}
+        {{ else if eq .Data.Singular "tag" }}
+            <h1>Posts with 
+                <span class="tag" style="text-transform: capitalize">
+                    # {{ .Data.Term }}
+                </span>
+            </h1>
+            {{ partial "posts-list.html" . }}
+        {{ end }}
 
-        {{ range $taxonomy, $value := .Data }}
-            {{if ne $taxonomy "Pages"}}
-                {{ range (index $page.Params $taxonomy) }}
-                    {{ if eq $root.Title (. | urlize | title) }}
+        {{ range $key, $value := .Data }}
+            $key: {{ $key }}<br>
+            $value: {{ $value }}<br>
+            {{ if ne $key "Pages" }}
+                HOGEHOGEHOGE<br>
+                {{ range (index $page.Params $key) }}
+                    HOGEHOGE
+                {{ end }}
+            {{ end }}
+            <br>
+        {{ end }}
+
+
+        {{ range $key, $value := .Data }}
+            {{ if ne $key "Pages" }}
+                {{ range (index $page.Params $key) }}
+                    {{ if eq $root.Title ( . | urlize | title ) }}
 
                         <h1 class="title">{{ . }}</h1>
-                        {{ $desc := printf "%s-desc" $taxonomy }}
+                        {{ $desc := printf "%s-desc" $key }}
                         {{ $desctax := index $root.Site.Taxonomies $desc }}
                 
-                        {{ $descpages := index $desctax (. | urlize) }}
+                        {{ $descpages := index $desctax ( . | urlize ) }}
                         {{ if len $descpages }}
                             {{ $descpage := index $descpages 0 }}
                             <span class="term-desc">{{ $descpage.Page.Content }}</span>
-                        {{end}}
+                        {{ end }}
 
-                    {{end}}<!-- ./ if -->
-                {{end}}<!-- ./ range -->
-            {{end}}<!-- ./ if -->
-        {{end}}<!-- ./ range -->
+                    {{ end }}<!-- ./ if -->
+                {{ end }}<!-- ./ range -->
+            {{ end }}<!-- ./ if -->
+        {{ end }}<!-- ./ range -->
 
-        <ul>
-            {{ range .Data.Pages }}
-                <li><a href="{{.Permalink}}">{{ .LinkTitle }}</a></li>
-            {{ end }}
-        </ul>
 
     </div>
 

@@ -1,8 +1,9 @@
 +++
 title = "さくら VPS 初期設定"
 date = 2017-04-19T19:01:00Z
-type = "post"
 draft = false
+type = "post"
+categories = ["Server"]
 tags = ["さくら VPS"]
 +++
 

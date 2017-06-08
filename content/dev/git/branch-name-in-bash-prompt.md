@@ -3,9 +3,9 @@ title = "Git ブランチ名を Bash プロンプトに表示する"
 date = 2017-05-21T06:29:00Z
 updated = 2017-05-21T07:45:48Z
 draft = false
+type = "post"
 categories = ["Tools"]
 tags = ["Git", "Bash"]
-type = "post"
 [author]
 	name = "ontheroad_jp"
 	uri = ""

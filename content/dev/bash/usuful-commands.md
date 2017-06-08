@@ -1,10 +1,10 @@
 +++
 title = "Bash 便利コマンド"
 date = 2017-04-19T19:01:00Z
+draft = false
 type = "post"
-draft = true
-tags = ["Bash"]
-slug = "bash-useful-commands"
+categories = ["Linux"]
+tags = ["Shell Script"]
 +++
 
 ## パイプで渡したコマンドの終了ステータスが知りたい

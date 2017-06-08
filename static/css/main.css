@@ -126,12 +126,28 @@ a.sidebar-nav-item:focus {
     border-left-width: 2px;
 }
 
+.content .content-index {
+    font-size: 85%;
+    line-height: 1.5rem;
+    border: solid 1px #6a9fb5;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.content .content-index h2 {
+    margin: 0.5rem;
+    margin-left: -0.5rem;
+    border: none;
+    font-size: 1.2rem;
+}
+
 span.tag {
     margin-right: 5px;
     padding: 0.1rem 0.5rem;
     background-color: #300030;
     border-radius: 5px;
     font-size: 80%;
+    color: #fff;
 }
 span.tag a {
     color: #fff !important;

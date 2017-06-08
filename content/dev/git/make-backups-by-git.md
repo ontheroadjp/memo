@@ -3,8 +3,9 @@ title = "Git で バックアップ"
 date = 2017-05-21T06:29:00Z
 updated = 2017-05-21T07:45:48Z
 draft = false
-tags = ["Git"]
 type = "post"
+categories = ["Tools"]
+tags = ["Git"]
 [author]
 	name = "ontheroad_jp"
 	uri = ""
